@@ -37,3 +37,30 @@ window.addEventListener('scroll', () => {
         navbar.style.padding = '1.5rem 0';
     }
 });
+
+// Lightbox Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const galleryImages = document.querySelectorAll('.gallery-grid img');
+
+    if (lightbox && lightboxImg) {
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
+    }
+});
