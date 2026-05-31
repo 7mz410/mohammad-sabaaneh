@@ -6,13 +6,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const pages = [
-    { title: 'Cartoons', file: 'cartoons.html', sourceDirs: ['Cartoon/2024'] },
-    { title: 'Murals', file: 'murals.html', sourceDirs: ['Mural/Yasser Arafat '] },
-    { title: 'Books', file: 'books.html', sourceDirs: ['Books/30 second from Gaza'] },
-    { title: 'Prints', file: 'prints.html', sourceDirs: ['prints/Kooz', 'prints/Big prints'] }
+    { title: 'Cartoons', file: 'cartoons.html', baseDir: 'Cartoon' },
+    { title: 'Murals', file: 'murals.html', baseDir: 'Mural' },
+    { title: 'Books', file: 'books.html', baseDir: 'Books' },
+    { title: 'Prints', file: 'prints.html', baseDir: 'prints' }
 ];
 
-const template = (title, imagesHtml) => `<!DOCTYPE html>
+const template = (title, sectionsHtml) => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,14 +41,9 @@ const template = (title, imagesHtml) => `<!DOCTYPE html>
         </div>
     </header>
 
-    <section class="gallery section" style="margin-top: 100px;">
-        <div class="container">
-            <h2 class="section-title text-center">${title.toUpperCase()}</h2>
-            <div class="gallery-grid">
-                ${imagesHtml}
-            </div>
-        </div>
-    </section>
+    <div style="margin-top: 100px;">
+        ${sectionsHtml}
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -59,23 +54,74 @@ const template = (title, imagesHtml) => `<!DOCTYPE html>
 </body>
 </html>`;
 
+async function getDirectories(source) {
+    try {
+        const items = await fs.readdir(source, { withFileTypes: true });
+        return items.filter(item => item.isDirectory()).map(item => item.name);
+    } catch {
+        return [];
+    }
+}
+
 async function generate() {
     for (const page of pages) {
-        let imagesHtml = '';
-        for (const dir of page.sourceDirs) {
-            const fullPath = path.join(__dirname, 'public', 'assets', dir);
+        let sectionsHtml = '';
+        const basePath = path.join(__dirname, 'public', 'assets', page.baseDir.trim());
+        const subDirs = await getDirectories(basePath);
+
+        // Sort directories alphabetically (or numerically for years)
+        subDirs.sort();
+
+        // Also check if there are files directly in the baseDir (e.g. prints/)
+        try {
+            const files = await fs.readdir(basePath, { withFileTypes: true });
+            const directFiles = files.filter(f => f.isFile() && f.name.endsWith('.webp'));
+            if (directFiles.length > 0) {
+                let imagesHtml = '';
+                for (const file of directFiles) {
+                    imagesHtml += `<img src="./public/assets/${page.baseDir.trim()}/${file.name}" alt="${page.title} image" class="animate-up" loading="lazy">\n                `;
+                }
+                sectionsHtml += `
+    <section class="gallery section">
+        <div class="container">
+            <h2 class="section-title text-center" style="font-size: 2rem;">Others</h2>
+            <div class="gallery-grid">
+                ${imagesHtml}
+            </div>
+        </div>
+    </section>`;
+            }
+        } catch (e) {
+            console.error(e);
+        }
+
+        for (const dir of subDirs) {
+            let imagesHtml = '';
+            const fullPath = path.join(basePath, dir);
             try {
                 const files = await fs.readdir(fullPath);
-                for (const file of files) {
-                    if (file.endsWith('.webp')) {
-                        imagesHtml += `<img src="./public/assets/${dir}/${file}" alt="${page.title} image" class="animate-up">\n                `;
-                    }
+                // only webp
+                const webpFiles = files.filter(f => f.endsWith('.webp'));
+                if (webpFiles.length === 0) continue;
+
+                for (const file of webpFiles) {
+                    imagesHtml += `<img src="./public/assets/${page.baseDir.trim()}/${dir}/${file}" alt="${dir} image" class="animate-up" loading="lazy">\n                `;
                 }
+                sectionsHtml += `
+    <section class="gallery section">
+        <div class="container">
+            <h2 class="section-title text-center" style="font-size: 2rem;">${dir}</h2>
+            <div class="gallery-grid">
+                ${imagesHtml}
+            </div>
+        </div>
+    </section>`;
             } catch (err) {
                 console.error(`Error reading ${fullPath}:`, err.message);
             }
         }
-        await fs.writeFile(path.join(__dirname, page.file), template(page.title, imagesHtml));
+
+        await fs.writeFile(path.join(__dirname, page.file), template(page.title, sectionsHtml));
         console.log(`Generated ${page.file}`);
     }
 }
