@@ -104,7 +104,7 @@ a {
     justify-content: center;
     position: relative;
     text-align: center;
-    background-image: url('./public/assets/prints/white\ and\ black/File\ 5-30-17\,\ 1\ 15\ 14\ PM.webp');
+    background-image: url('./public/assets/Hero.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -117,13 +117,15 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(26,26,26,0.6), rgba(26,26,26,1));
+    background: linear-gradient(rgba(26,26,26,0.55), rgba(26,26,26,1));
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
 }
 
 .hero-title {
@@ -138,6 +140,27 @@ a {
     font-weight: 300;
     letter-spacing: 2px;
     color: #aaaaaa;
+}
+
+.hero-quote {
+    margin-top: 2.5rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1.5rem;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.hero-quote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--title-color);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
 }
 
 /* Sections */
@@ -186,6 +209,27 @@ a {
     font-size: 1.1rem;
 }
 
+/* Video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
 /* Footer */
 .footer {
     background: #0a0a0a;
@@ -218,6 +262,9 @@ a {
     }
     .nav-links {
         display: none;
+    }
+    .hero-quote {
+        font-size: 0.95rem;
     }
 }
 
@@ -367,4 +414,30 @@ a {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Book Cards */
+.book-card {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background: #222;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.book-card h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
 }
