@@ -214,7 +214,12 @@ async function generatePrints() {
         </div>
     </section>`;
 
-    for (const dir of dirs) {
+    // Sort so Digital comes last
+    const sortedDirs = dirs.filter(d => d !== 'Digital');
+    const hasDigital = dirs.includes('Digital');
+    if (hasDigital) sortedDirs.push('Digital');
+
+    for (const dir of sortedDirs) {
         const files = await getWebpFiles(path.join(basePath, dir));
         if (files.length === 0) continue;
         const imgs = files.map(f => `<img src="./public/assets/prints/${dir}/${f}" alt="${dir}" class="animate-up" loading="lazy">`).join('\n                ');
