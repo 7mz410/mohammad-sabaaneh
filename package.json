@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "predeploy": "npm run build && cp dist/index.html dist/404.html"
   },
   "dependencies": {
     "sharp": "^0.34.5",
