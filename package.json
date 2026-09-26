@@ -1,17 +1,12 @@
 {
-  "name": "website",
-  "version": "0.0.0",
+  "name": "sabaaneh-website",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build && cp dist/index.html dist/404.html"
+    "images": "node compress_missing.js",
+    "pages": "node generate_pages.js"
   },
   "dependencies": {
-    "sharp": "^0.34.5",
-    "vue": "^3.0.4"
-  },
-  "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
-    "vite": "^1.0.0-rc.13"
+    "sharp": "^0.34.5"
   }
 }

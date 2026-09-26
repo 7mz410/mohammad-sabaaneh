@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Sabaaneh - Books</title>
+    <title>Books | Mohammad Sabaaneh</title>
     <link rel="icon" href="./public/fav.png" type="image/png">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,62 +12,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="navbar" style="background: rgba(26, 26, 26, 1);">
+    <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <img src="./public/Logo-White.png" alt="Sabaaneh Logo" style="height: 50px;">
+                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh" class="logo">
             </a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
             <nav class="nav-links">
                 <a href="index.html#about">Bio</a>
                 <a href="cartoons.html">Cartoons</a>
                 <a href="murals.html">Murals</a>
                 <a href="books.html">Books</a>
                 <a href="prints.html">Prints</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
-    <div style="margin-top:100px;">
+    <main class="page">
         <section class="gallery section">
             <div class="container">
                 <h2 class="section-title text-center">BOOKS</h2>
                 <div class="gallery-grid">
                     
+                <a href="book-welcome-to-hell.html" class="book-card animate-up">
+                    <img src="./public/assets/Books/Welcome to hell/Welcome to Hell front cover.webp" alt="Welcome to Hell cover" loading="lazy">
+                    <h3>Welcome to Hell</h3>
+                    <p>From the West Bank to Gaza</p>
+                </a>
                 <a href="book-30-second-from-gaza.html" class="book-card animate-up">
-                    <img src="./public/assets/Books/30 second from Gaza/9788846930354.webp" alt="30 second from Gaza" loading="lazy">
-                    <h3>30 second from Gaza</h3>
+                    <img src="./public/assets/Books/30 second from Gaza/9788846930354.webp" alt="30 Seconds from Gaza cover" loading="lazy">
+                    <h3>30 Seconds from Gaza</h3>
+                    <p>Diary of Genocide</p>
+                </a>
+                <a href="book-power-born-of-dream.html" class="book-card animate-up">
+                    <img src="./public/assets/Books/Power Born of Dream/1778871051672.webp" alt="Power Born of Dreams cover" loading="lazy">
+                    <h3>Power Born of Dreams</h3>
+                    <p>My Story is Palestine</p>
                 </a>
                 <a href="book-palestine-white-and-black.html" class="book-card animate-up">
-                    <img src="./public/assets/Books/Palestine White and Black/9780863569401_5638330649.webp" alt="Palestine White and Black" loading="lazy">
-                    <h3>Palestine White and Black</h3>
-                </a>
-                <a href="book-power-born-of-dream.html" class="book-card animate-up">
-                    <img src="./public/assets/Books/Power Born of Dream/1778871051672.webp" alt="Power Born of Dream" loading="lazy">
-                    <h3>Power Born of Dream</h3>
-                </a>
-                <a href="book-power-born-of-dream.html" class="book-card animate-up">
-                    <img src="./public/assets/Books/Power Born of Dream /1778871051672.webp" alt="Power Born of Dream " loading="lazy">
-                    <h3>Power Born of Dream </h3>
-                </a>
-                <a href="book-welcome-to-hell.html" class="book-card animate-up">
-                    <img src="./public/assets/Books/Welcome to hell/1000167702.webp" alt="Welcome to hell" loading="lazy">
-                    <h3>Welcome to hell</h3>
+                    <img src="./public/assets/Books/Palestine White and Black/9780863569401_5638330649.webp" alt="White and Black cover" loading="lazy">
+                    <h3>White and Black</h3>
+                    <p>Political Cartoons from Palestine</p>
                 </a>
                 </div>
             </div>
         </section>
-    </div>
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-img" id="lightbox-img" src="">
-    </div>
-    <footer class="footer">
+    </main>
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="social-links">
-                <a href="https://www.instagram.com/sabaaneh/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://x.com/sabaaneh" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.facebook.com/msabaaneh" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:sabaaneh@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved. Powered by <a href="https://el7mz.com" target="_blank" style="text-decoration: underline; color: #fff;">el7mz.com</a></p>
+            <p class="footer-email"><a href="mailto:sabaaneh@gmail.com"><i class="fas fa-envelope"></i> sabaaneh@gmail.com</a></p>
+            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved. Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
         </div>
     </footer>
     <script type="module" src="./main.js"></script>

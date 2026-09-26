@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Sabaaneh - Prints</title>
+    <title>Prints | Mohammad Sabaaneh</title>
     <link rel="icon" href="./public/fav.png" type="image/png">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,30 +12,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="navbar" style="background: rgba(26, 26, 26, 1);">
+    <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <img src="./public/Logo-White.png" alt="Sabaaneh Logo" style="height: 50px;">
+                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh" class="logo">
             </a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
             <nav class="nav-links">
                 <a href="index.html#about">Bio</a>
                 <a href="cartoons.html">Cartoons</a>
                 <a href="murals.html">Murals</a>
                 <a href="books.html">Books</a>
                 <a href="prints.html">Prints</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
-    </header><div style="margin-top:100px;">
-    <section class="section" style="padding-bottom: 0;">
+    </header><main class="page">
+    <section class="section pb-0">
         <div class="container text-center">
-            <a href="./public/assets/prints/Sabaaneh_High.pdf" download="Sabaaneh_High_Resolution.pdf" class="download-btn" style="font-size: 1.1rem;">
+            <a href="./public/assets/prints/Sabaaneh_High.pdf" download="Sabaaneh_High_Resolution.pdf" class="download-btn">
                 <i class="fas fa-file-pdf"></i> Download High Resolution Portfolio
             </a>
         </div>
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title text-center" style="font-size: 2rem;">Big prints</h2>
+            <h2 class="section-title sub text-center">Big prints</h2>
             
             <div class="gallery-grid">
                 <img src="./public/assets/prints/Big prints/20200824_160803.webp" alt="Big prints" class="animate-up" loading="lazy">
@@ -47,7 +49,7 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title text-center" style="font-size: 2rem;">Intaglio</h2>
+            <h2 class="section-title sub text-center">Intaglio</h2>
             
             <div class="gallery-grid">
                 <img src="./public/assets/prints/Intaglio/20200824_163922.webp" alt="Intaglio" class="animate-up" loading="lazy">
@@ -57,7 +59,7 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title text-center" style="font-size: 2rem;">Kooz</h2>
+            <h2 class="section-title sub text-center">Kooz</h2>
             
             <div class="gallery-grid">
                 <img src="./public/assets/prints/Kooz/Lines0330-01.webp" alt="Kooz" class="animate-up" loading="lazy">
@@ -75,7 +77,7 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title text-center" style="font-size: 2rem;">Natives</h2>
+            <h2 class="section-title sub text-center">Natives</h2>
             
             <div class="gallery-grid">
                 <img src="./public/assets/prints/Natives/18869853_10154374599880806_98882023_o.webp" alt="Natives" class="animate-up" loading="lazy">
@@ -89,7 +91,7 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title text-center" style="font-size: 2rem;">white and black</h2>
+            <h2 class="section-title sub text-center">white and black</h2>
             
             <div class="gallery-grid">
                 <img src="./public/assets/prints/white and black/DOC110716-11072016120055.webp" alt="white and black" class="animate-up" loading="lazy">
@@ -109,7 +111,7 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title text-center" style="font-size: 2rem;">Digital</h2>
+            <h2 class="section-title sub text-center">Digital</h2>
             
             <div class="gallery-grid">
                 <img src="./public/assets/prints/Digital/281632764_10158271582565806_6520920403102866438_n.webp" alt="Digital" class="animate-up" loading="lazy">
@@ -123,19 +125,17 @@
                 <img src="./public/assets/prints/Digital/small.webp" alt="Digital" class="animate-up" loading="lazy">
             </div>
         </div>
-    </section></div>
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-img" id="lightbox-img" src="">
-    </div>
-    <footer class="footer">
+    </section></main>
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="social-links">
-                <a href="https://www.instagram.com/sabaaneh/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://x.com/sabaaneh" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.facebook.com/msabaaneh" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:sabaaneh@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved. Powered by <a href="https://el7mz.com" target="_blank" style="text-decoration: underline; color: #fff;">el7mz.com</a></p>
+            <p class="footer-email"><a href="mailto:sabaaneh@gmail.com"><i class="fas fa-envelope"></i> sabaaneh@gmail.com</a></p>
+            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved. Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
         </div>
     </footer>
     <script type="module" src="./main.js"></script>

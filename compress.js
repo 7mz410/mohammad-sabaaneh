@@ -34,7 +34,7 @@ async function processImages() {
                     // process 1 level deep for Cartoon folder which has years
                     const subDir = path.join(sourcePath, item.name);
                     const subFiles = await fs.readdir(subDir, { withFileTypes: true });
-                    const subOutDirPath = path.join(outDirPath, item.name);
+                    const subOutDirPath = path.join(outDirPath, item.name.trim());
                     await ensureDir(subOutDirPath);
 
                     for (const subFile of subFiles) {

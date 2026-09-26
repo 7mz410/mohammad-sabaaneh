@@ -96,9 +96,26 @@ a {
     width: 100%;
 }
 
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 1rem 0;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--title-color);
+    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
+    height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,8 +146,8 @@ a {
 }
 
 .hero-title {
-    font-size: 4rem;
-    letter-spacing: 5px;
+    font-size: clamp(2rem, 8vw, 4rem);
+    letter-spacing: clamp(1px, 0.6vw, 5px);
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
@@ -257,11 +274,44 @@ a {
     .about-grid {
         grid-template-columns: 1fr;
     }
-    .hero-title {
-        font-size: 2.5rem;
+    .nav-toggle {
+        display: block;
     }
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(10, 10, 10, 0.98);
+        padding: 0.5rem 2rem 1.5rem;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links a {
+        padding: 0.9rem 0;
+        border-bottom: 1px solid #222;
+    }
+    .nav-links a::after {
+        display: none;
+    }
+    .hero {
+        background-attachment: scroll;
+    }
+    .section {
+        padding: 4rem 0;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 0 1.25rem;
+    }
+    .bio-content p {
+        font-size: 1rem;
     }
     .hero-quote {
         font-size: 0.95rem;
@@ -365,29 +415,26 @@ a {
     margin-right: 8px;
 }
 
-/* Lightbox Modal */
+/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
+    inset: 0;
     z-index: 9999;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.92);
     backdrop-filter: blur(5px);
-}
-
-.lightbox.active {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.lightbox.active {
+    display: flex;
+}
+
 .lightbox-img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 88%;
+    max-height: 88%;
+    object-fit: contain;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0,0,0,0.8);
     animation: zoomIn 0.3s ease;
@@ -398,22 +445,30 @@ a {
     to { transform: scale(1); opacity: 1; }
 }
 
-.lightbox-close {
+.lb-btn {
     position: absolute;
-    top: 20px;
-    right: 35px;
+    background: none;
+    border: 0;
     color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
     cursor: pointer;
-    transition: 0.3s;
+    opacity: 0.7;
+    transition: var(--transition);
 }
 
-.lightbox-close:hover,
-.lightbox-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+.lb-btn:hover { opacity: 1; }
+.lb-close { top: 16px; right: 16px; }
+.lb-prev { left: 8px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 8px; top: 50%; transform: translateY(-50%); }
+
+.lb-count {
+    position: absolute;
+    bottom: 16px;
+    color: #999;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 /* Book Cards */
@@ -440,4 +495,174 @@ a {
     padding: 1rem;
     font-size: 1.2rem;
     letter-spacing: 1px;
+}
+
+.book-card p {
+    padding: 0 1rem 1.25rem;
+    margin-top: -0.5rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Inner pages */
+.page {
+    padding-top: 100px;
+}
+
+.section-title.sub {
+    font-size: 2rem;
+}
+
+.pb-0 { padding-bottom: 0; }
+.mb { margin-bottom: 2rem; }
+
+.back-link {
+    color: var(--accent-color);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.book-title {
+    margin-bottom: 0.5rem;
+}
+
+.book-subtitle {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.bio-list {
+    margin: -0.5rem 0 1.5rem 1.25rem;
+    font-size: 1.05rem;
+}
+
+.bio-list li {
+    margin-bottom: 0.4rem;
+}
+
+.bio-actions {
+    margin-top: 2rem;
+}
+
+.logo {
+    height: 50px;
+    display: block;
+}
+
+.credit {
+    text-decoration: underline;
+    color: #fff;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate-up, .animate-fade { opacity: 1; transform: none; transition: none; }
+    .lightbox-img { animation: none; }
+}
+
+/* Cartoon year tabs */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tab {
+    background: none;
+    border: 1px solid #444;
+    color: var(--text-color);
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab:hover {
+    border-color: #888;
+    color: var(--title-color);
+}
+
+.tab[aria-selected="true"] {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--title-color);
+}
+
+/* Book text */
+.book-text {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.book-text h2 {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 2.5rem 0 1rem;
+}
+
+.book-text p {
+    margin-bottom: 1.25rem;
+}
+
+.book-text .signoff {
+    font-style: italic;
+    color: #999;
+}
+
+.praise {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1.25rem;
+    margin: 0 0 1.75rem;
+    font-style: italic;
+}
+
+.praise cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.praise cite::before {
+    content: '— ';
+}
+
+.book-text details {
+    margin-top: 0.5rem;
+}
+
+.book-text summary {
+    cursor: pointer;
+    color: var(--title-color);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.footer-email {
+    margin-bottom: 0.75rem;
+}
+
+.footer-email a:hover {
+    color: var(--title-color);
+}
+
+.pb-0 + .section,
+.pb-0 + .year-panel {
+    padding-top: 3rem;
+}
+
+.back-link {
+    color: #d45a5a;
 }
