@@ -19,16 +19,26 @@ const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 50);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Mobile menu
+// Fullscreen menu
 const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
+const menu = document.querySelector('.menu');
 const setMenu = (open) => {
-    links.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', open);
-    toggle.innerHTML = `<i class="fas fa-${open ? 'xmark' : 'bars'}"></i>`;
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.querySelector('.nav-toggle-text').textContent = open ? 'Close' : 'Menu';
+    if (open) menu.querySelector('a').focus();
 };
-toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
-links.addEventListener('click', (e) => { if (e.target.tagName === 'A') setMenu(false); });
+toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); toggle.focus(); }
+});
+const page = location.pathname.split('/').pop() || 'index.html';
+menu.querySelectorAll('a').forEach(a => {
+    if (a.getAttribute('href') === page) a.setAttribute('aria-current', 'page');
+});
 
 // Cartoon year tabs (#2019 in the URL opens that year)
 const tabs = [...document.querySelectorAll('.tab')];

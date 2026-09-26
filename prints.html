@@ -5,41 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prints | Mohammad Sabaaneh</title>
     <link rel="icon" href="./public/fav.png" type="image/png">
-    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh" class="logo">
+                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh home" class="logo" width="436" height="241">
             </a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            <nav class="nav-links">
-                <a href="index.html#about">Bio</a>
-                <a href="cartoons.html">Cartoons</a>
-                <a href="murals.html">Murals</a>
-                <a href="books.html">Books</a>
-                <a href="prints.html">Prints</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+                <span class="nav-toggle-text">Menu</span>
+                <span class="burger" aria-hidden="true"><span></span><span></span></span>
+            </button>
         </div>
-    </header><main class="page">
+    </header>
+    <div class="menu" id="menu">
+        <nav class="menu-links container" aria-label="Main">
+            <a href="index.html#about"><span class="num">01</span>Bio</a>
+            <a href="cartoons.html"><span class="num">02</span>Cartoons</a>
+            <a href="murals.html"><span class="num">03</span>Murals</a>
+            <a href="books.html"><span class="num">04</span>Books</a>
+            <a href="prints.html"><span class="num">05</span>Prints</a>
+            <a href="#contact"><span class="num">06</span>Contact</a>
+        </nav>
+        <div class="menu-footer container">
+            <a href="mailto:sabaaneh@gmail.com" class="menu-mail">sabaaneh@gmail.com</a>
+            <div class="social-links">
+                <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div><main class="page" id="main">
+    <section class="section pb-0">
+        <div class="container">
+            <p class="eyebrow text-center">Printmaking</p>
+            <h1 class="section-title text-center">Prints</h1>
+        </div>
+    </section>
     <section class="section pb-0">
         <div class="container text-center">
-            <a href="./public/assets/prints/Sabaaneh_High.pdf" download="Sabaaneh_High_Resolution.pdf" class="download-btn">
-                <i class="fas fa-file-pdf"></i> Download High Resolution Portfolio
+            <a href="./public/assets/prints/Sabaaneh_High.pdf" download="Sabaaneh_High_Resolution.pdf" class="btn">
+                <i class="fas fa-arrow-down"></i> Download High Resolution Portfolio (PDF)
             </a>
         </div>
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title sub text-center">Big prints</h2>
+            <h2 class="section-title sub">Big prints</h2>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 <img src="./public/assets/prints/Big prints/20200824_160803.webp" alt="Big prints" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Big prints/20220916_221550.webp" alt="Big prints" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Big prints/20250210_164851.webp" alt="Big prints" class="animate-up" loading="lazy">
@@ -49,9 +69,9 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title sub text-center">Intaglio</h2>
+            <h2 class="section-title sub">Intaglio</h2>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 <img src="./public/assets/prints/Intaglio/20200824_163922.webp" alt="Intaglio" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Intaglio/20200825_120157.webp" alt="Intaglio" class="animate-up" loading="lazy">
             </div>
@@ -59,9 +79,9 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title sub text-center">Kooz</h2>
+            <h2 class="section-title sub">Kooz</h2>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 <img src="./public/assets/prints/Kooz/Lines0330-01.webp" alt="Kooz" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Kooz/Lines0330-02.webp" alt="Kooz" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Kooz/Lines0330-03.webp" alt="Kooz" class="animate-up" loading="lazy">
@@ -77,9 +97,9 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title sub text-center">Natives</h2>
+            <h2 class="section-title sub">Natives</h2>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 <img src="./public/assets/prints/Natives/18869853_10154374599880806_98882023_o.webp" alt="Natives" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Natives/HPSC3859.webp" alt="Natives" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Natives/HPSC3860.webp" alt="Natives" class="animate-up" loading="lazy">
@@ -91,9 +111,9 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title sub text-center">white and black</h2>
+            <h2 class="section-title sub">white and black</h2>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 <img src="./public/assets/prints/white and black/DOC110716-11072016120055.webp" alt="white and black" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/white and black/DOC110716-11072016120702.webp" alt="white and black" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/white and black/DOC110716-11072016121017.webp" alt="white and black" class="animate-up" loading="lazy">
@@ -111,9 +131,9 @@
     </section>
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title sub text-center">Digital</h2>
+            <h2 class="section-title sub">Digital</h2>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 <img src="./public/assets/prints/Digital/281632764_10158271582565806_6520920403102866438_n.webp" alt="Digital" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Digital/333.webp" alt="Digital" class="animate-up" loading="lazy">
                 <img src="./public/assets/prints/Digital/Gaza woman.webp" alt="Digital" class="animate-up" loading="lazy">
@@ -127,15 +147,20 @@
         </div>
     </section></main>
     <footer class="footer" id="contact">
-        <div class="container">
+        <div class="container footer-grid">
+            <div>
+                <p class="eyebrow">Get in touch</p>
+                <a href="mailto:sabaaneh@gmail.com" class="footer-mail">sabaaneh@gmail.com</a>
+            </div>
             <div class="social-links">
                 <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
                 <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="mailto:sabaaneh@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="footer-email"><a href="mailto:sabaaneh@gmail.com"><i class="fas fa-envelope"></i> sabaaneh@gmail.com</a></p>
-            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved. Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved.</p>
+            <p>Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
         </div>
     </footer>
     <script type="module" src="./main.js"></script>

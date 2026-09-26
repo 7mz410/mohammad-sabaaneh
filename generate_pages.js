@@ -5,35 +5,57 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const LINKS = [
+    ['index.html#about', 'Bio'],
+    ['cartoons.html', 'Cartoons'],
+    ['murals.html', 'Murals'],
+    ['books.html', 'Books'],
+    ['prints.html', 'Prints'],
+    ['#contact', 'Contact'],
+];
+
+const SOCIAL = `
+                <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>`;
+
 const NAV = `
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh" class="logo">
+                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh home" class="logo" width="436" height="241">
             </a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            <nav class="nav-links">
-                <a href="index.html#about">Bio</a>
-                <a href="cartoons.html">Cartoons</a>
-                <a href="murals.html">Murals</a>
-                <a href="books.html">Books</a>
-                <a href="prints.html">Prints</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+                <span class="nav-toggle-text">Menu</span>
+                <span class="burger" aria-hidden="true"><span></span><span></span></span>
+            </button>
         </div>
-    </header>`;
+    </header>
+    <div class="menu" id="menu">
+        <nav class="menu-links container" aria-label="Main">
+            ${LINKS.map(([href, label], i) => `<a href="${href}"><span class="num">0${i + 1}</span>${label}</a>`).join('\n            ')}
+        </nav>
+        <div class="menu-footer container">
+            <a href="mailto:sabaaneh@gmail.com" class="menu-mail">sabaaneh@gmail.com</a>
+            <div class="social-links">${SOCIAL}
+            </div>
+        </div>
+    </div>`;
 
 const FOOTER = `
     <footer class="footer" id="contact">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="mailto:sabaaneh@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <div class="container footer-grid">
+            <div>
+                <p class="eyebrow">Get in touch</p>
+                <a href="mailto:sabaaneh@gmail.com" class="footer-mail">sabaaneh@gmail.com</a>
             </div>
-            <p class="footer-email"><a href="mailto:sabaaneh@gmail.com"><i class="fas fa-envelope"></i> sabaaneh@gmail.com</a></p>
-            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved. Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
+            <div class="social-links">${SOCIAL}
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved.</p>
+            <p>Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
         </div>
     </footer>`;
 
@@ -52,11 +74,11 @@ const HEAD = (title) => `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} | Mohammad Sabaaneh</title>
     <link rel="icon" href="./public/fav.png" type="image/png">
-    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>`;
 
@@ -79,13 +101,23 @@ async function getSubdirs(dir) {
     } catch { return []; }
 }
 
+function pageHeader(eyebrow, title) {
+    return `
+    <section class="section pb-0">
+        <div class="container">
+            <p class="eyebrow text-center">${eyebrow}</p>
+            <h1 class="section-title text-center">${title}</h1>
+        </div>
+    </section>`;
+}
+
 function gallerySection(title, imagesHtml, extraHtml = '') {
     return `
     <section class="gallery section">
         <div class="container">
-            <h2 class="section-title sub text-center">${title}</h2>
+            <h2 class="section-title sub">${title}</h2>
             ${extraHtml}
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 ${imagesHtml}
             </div>
         </div>
@@ -106,7 +138,7 @@ async function generateCartoons() {
         sections += `
     <section class="gallery section year-panel" id="y${year}" hidden>
         <div class="container">
-            <div class="gallery-grid">
+            <div class="gallery-grid masonry">
                 ${imgs}
             </div>
         </div>
@@ -115,11 +147,12 @@ async function generateCartoons() {
     sections = `
     <section class="section pb-0">
         <div class="container">
-            <h1 class="section-title text-center">CARTOONS</h1>
+            <p class="eyebrow text-center">2017 – 2024</p>
+            <h1 class="section-title text-center">Cartoons</h1>
             <nav class="tabs" aria-label="Year">${tabs}</nav>
         </div>
     </section>` + sections;
-    const html = HEAD('Cartoons') + NAV + `<main class="page">${sections}</main>` + FOOTER + CLOSE;
+    const html = HEAD('Cartoons') + NAV + `<main class="page" id="main">${sections}</main>` + FOOTER + CLOSE;
     await fs.writeFile(path.join(__dirname, 'cartoons.html'), html);
     console.log('Generated cartoons.html');
 }
@@ -140,7 +173,7 @@ async function generateMurals() {
         }
         sections += gallerySection(dir, imgs, extra);
     }
-    const html = HEAD('Murals') + NAV + `<main class="page">${sections}</main>` + FOOTER + CLOSE;
+    const html = HEAD('Murals') + NAV + `<main class="page" id="main">${pageHeader('Public walls', 'Murals')}${sections}</main>` + FOOTER + CLOSE;
     await fs.writeFile(path.join(__dirname, 'murals.html'), html);
     console.log('Generated murals.html');
 }
@@ -167,11 +200,12 @@ async function generateBooks() {
     }
 
     const booksHtml = HEAD('Books') + NAV + `
-    <main class="page">
+    <main class="page" id="main">
         <section class="gallery section">
             <div class="container">
-                <h2 class="section-title text-center">BOOKS</h2>
-                <div class="gallery-grid">
+                <p class="eyebrow text-center">Published work</p>
+                <h1 class="section-title text-center">Books</h1>
+                <div class="book-grid">
                     ${cardsHtml}
                 </div>
             </div>
@@ -215,7 +249,7 @@ async function generateBooks() {
         if (pagesImgs) sections += gallerySection('Pages', pagesImgs);
 
         const bookHtml = HEAD(title) + NAV + `
-    <main class="page">
+    <main class="page" id="main">
         <section class="section pb-0">
             <div class="container">
                 <p class="text-center"><a href="books.html" class="back-link">← Back to Books</a></p>
@@ -241,8 +275,8 @@ async function generatePrints() {
     sections += `
     <section class="section pb-0">
         <div class="container text-center">
-            <a href="./public/assets/prints/Sabaaneh_High.pdf" download="Sabaaneh_High_Resolution.pdf" class="download-btn">
-                <i class="fas fa-file-pdf"></i> Download High Resolution Portfolio
+            <a href="./public/assets/prints/Sabaaneh_High.pdf" download="Sabaaneh_High_Resolution.pdf" class="btn">
+                <i class="fas fa-arrow-down"></i> Download High Resolution Portfolio (PDF)
             </a>
         </div>
     </section>`;
@@ -258,13 +292,25 @@ async function generatePrints() {
         const imgs = files.map(f => `<img src="./public/assets/prints/${dir}/${f}" alt="${dir}" class="animate-up" loading="lazy">`).join('\n                ');
         sections += gallerySection(dir, imgs);
     }
-    const html = HEAD('Prints') + NAV + `<main class="page">${sections}</main>` + FOOTER + CLOSE;
+    const html = HEAD('Prints') + NAV + `<main class="page" id="main">${pageHeader('Printmaking', 'Prints')}${sections}</main>` + FOOTER + CLOSE;
     await fs.writeFile(path.join(__dirname, 'prints.html'), html);
     console.log('Generated prints.html');
 }
 
 // ======================= MAIN =======================
+// Inject shared nav/footer into the hand-written index.html
+async function syncIndex() {
+    const file = path.join(__dirname, 'index.html');
+    let html = await fs.readFile(file, 'utf8');
+    html = html
+        .replace(/<!-- NAV -->[\s\S]*<!-- \/NAV -->/, `<!-- NAV -->${NAV}\n<!-- /NAV -->`)
+        .replace(/<!-- FOOTER -->[\s\S]*<!-- \/FOOTER -->/, `<!-- FOOTER -->${FOOTER}\n<!-- /FOOTER -->`);
+    await fs.writeFile(file, html);
+    console.log('Synced index.html');
+}
+
 async function main() {
+    await syncIndex();
     await generateCartoons();
     await generateMurals();
     await generateBooks();

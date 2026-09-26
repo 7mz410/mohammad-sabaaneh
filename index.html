@@ -7,55 +7,77 @@
     <title>Mohammad Sabaaneh | Visual Artist</title>
     <meta name="description" content="The official website of Mohammad Sabaaneh, Palestinian visual artist, cartoonist, and author.">
     <link rel="icon" href="./public/fav.png" type="image/png">
-    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-
-    <!-- Header Navigation -->
+<!-- NAV -->
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh" class="logo">
+                <img src="./public/Logo-White.png" alt="Mohammad Sabaaneh home" class="logo" width="436" height="241">
             </a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            <nav class="nav-links">
-                <a href="index.html#about">Bio</a>
-                <a href="cartoons.html">Cartoons</a>
-                <a href="murals.html">Murals</a>
-                <a href="books.html">Books</a>
-                <a href="prints.html">Prints</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+                <span class="nav-toggle-text">Menu</span>
+                <span class="burger" aria-hidden="true"><span></span><span></span></span>
+            </button>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title animate-up">MOHAMMAD SABAANEH</h1>
-            <p class="hero-subtitle animate-up delay-1">Visual Artist</p>
-            <blockquote class="hero-quote animate-up delay-2">
-                "An artistic triumph that will stand as an enduring testament to the spirit of the Palestinian people. Mohammad Sabaaneh is a master."
-                <cite>— JOE SACCO</cite>
-            </blockquote>
+    <div class="menu" id="menu">
+        <nav class="menu-links container" aria-label="Main">
+            <a href="index.html#about"><span class="num">01</span>Bio</a>
+            <a href="cartoons.html"><span class="num">02</span>Cartoons</a>
+            <a href="murals.html"><span class="num">03</span>Murals</a>
+            <a href="books.html"><span class="num">04</span>Books</a>
+            <a href="prints.html"><span class="num">05</span>Prints</a>
+            <a href="#contact"><span class="num">06</span>Contact</a>
+        </nav>
+        <div class="menu-footer container">
+            <a href="mailto:sabaaneh@gmail.com" class="menu-mail">sabaaneh@gmail.com</a>
+            <div class="social-links">
+                <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
         </div>
-    </section>
+    </div>
+<!-- /NAV -->
 
-    <!-- About Section -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="about-grid">
+    <main id="main">
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow animate-up">Palestinian Visual Artist</p>
+                <h1 class="hero-title animate-up delay-1">Mohammad<br>Sabaaneh</h1>
+                <blockquote class="hero-quote animate-up delay-2">
+                    “An artistic triumph that will stand as an enduring testament to the spirit of the Palestinian people. Mohammad Sabaaneh is a master.”
+                    <cite>Joe Sacco</cite>
+                </blockquote>
+            </div>
+            <a href="#about" class="scroll-cue" aria-label="Scroll to bio"><i class="fas fa-arrow-down"></i></a>
+        </section>
+
+        <section class="facts" aria-label="Highlights">
+            <div class="container facts-grid">
+                <div><strong>2002</strong><span>Drawing since</span></div>
+                <div><strong>4</strong><span>Published books</span></div>
+                <div><strong>9</strong><span>Languages</span></div>
+                <div><strong>LOC</strong><span>Library of Congress collection</span></div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <div class="container about-grid">
                 <div class="about-image animate-fade">
-                    <img src="./public/assets/Bio/Headshot.webp" alt="Mohammad Sabaaneh Portrait">
+                    <img src="./public/assets/Bio/Headshot.webp" alt="Portrait of Mohammad Sabaaneh" width="664" height="860">
                 </div>
                 <div class="about-text animate-fade delay-1">
-                    <h2 class="section-title">ABOUT</h2>
+                    <p class="eyebrow">Biography</p>
+                    <h2 class="section-title">About</h2>
                     <div class="bio-content">
                         <p>Mohammad Sabaaneh is a Palestinian cartoonist and academic whose prominent career in art began in 2002. He teaches at the Arab American University and holds a Master’s degree in Illustration from the United Kingdom, which he earned through the prestigious Chevening Scholarship.</p>
                         <p>His work has been published in numerous newspapers and magazines, including The Washington Post, Al-Quds Al-Arabi, and Al-Hayat. He is a member of Cartoon Movement and serves as the Middle East representative for Cartoonists Rights (formerly CRNI).</p>
@@ -67,66 +89,72 @@
                         <p>His first book, White and Black: Political Cartoons from Palestine, was published in 2017 by Just World Books in the United States and Saqi Books in the United Kingdom, and his work was featured at the Edinburgh International Book Festival in 2018. In 2021, he published his first comic book, Power Born of Dreams: My Story is Palestine, in the United States, which is recognized as the first Palestinian graphic novel. His third book, 30 Seconds from Gaza: Diary of Genocide, was published in 2024 in four different languages. He published his fourth book, Welcome to Hell: From the West Bank to Gaza, in 2026. To reach a global audience, his works have been translated into Spanish, Catalan, French, Italian, Albanian, German, Greek, Slovenian, and Arabic.</p>
                         <p>Furthermore, he co-curated the Palestinian Comics Exhibition at the Lakes International Comic Art Festival in the UK in 2023, curated the Palestinian Comics Exhibition that toured several Spanish cities in 2025, and curated the Palestinian Comics Exhibition at the Academy of Fine Arts in Ljubljana in 2026.</p>
                         <div class="bio-actions">
-                            <a href="./public/assets/Sabaaneh_Portfolio.pdf" download="Mohammad_Sabaaneh_Portfolio.pdf" class="download-btn">
-                                <i class="fas fa-file-pdf"></i> Download Portfolio
+                            <a href="./public/assets/Sabaaneh_Portfolio.pdf" download="Mohammad_Sabaaneh_Portfolio.pdf" class="btn">
+                                <i class="fas fa-arrow-down"></i> Download Portfolio (PDF)
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Video Section -->
-    <section class="section bg-dark" id="video">
-        <div class="container">
-            <h2 class="section-title text-center">FEATURED VIDEO</h2>
-            <div class="video-container">
-                <iframe loading="lazy" src="https://www.youtube.com/embed/ahMLiL3lJ58" title="Mohammad Sabaaneh - Featured Video"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+        <section class="section section-alt" id="video">
+            <div class="container">
+                <p class="eyebrow text-center">Watch</p>
+                <h2 class="section-title text-center">Featured Video</h2>
+                <div class="video-container">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/ahMLiL3lJ58" title="Mohammad Sabaaneh - Featured Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Categories Section -->
-    <section class="categories section" id="portfolio">
-        <div class="container">
-            <h2 class="section-title text-center">PORTFOLIO</h2>
-            <div class="gallery-grid">
-                <a href="cartoons.html" class="category-card animate-up">
-                    <div class="category-image" style="background-image: url('./public/assets/Cartoon/2024/IMG_7927.webp');"></div>
-                    <h3>Cartoons</h3>
-                </a>
-                <a href="murals.html" class="category-card animate-up delay-1">
-                    <div class="category-image" style="background-image: url('./public/assets/Mural/Yasser Arafat/1000166403.webp');"></div>
-                    <h3>Murals</h3>
-                </a>
-                <a href="books.html" class="category-card animate-up delay-2">
-                    <div class="category-image" style="background-image: url('./public/assets/Books/30 second from Gaza/9788846930354.webp');"></div>
-                    <h3>Books</h3>
-                </a>
-                <a href="prints.html" class="category-card animate-up delay-1">
-                    <div class="category-image" style="background-image: url('./public/assets/prints/Kooz/Lines0330-01.webp');"></div>
-                    <h3>Prints</h3>
-                </a>
+        <section class="section" id="portfolio">
+            <div class="container">
+                <p class="eyebrow text-center">Work</p>
+                <h2 class="section-title text-center">Portfolio</h2>
+                <div class="category-grid">
+                    <a href="cartoons.html" class="category-card animate-up">
+                        <img src="./public/assets/Cartoon/2024/IMG_7927.webp" alt="" loading="lazy">
+                        <span class="category-label"><span class="num">01</span>Cartoons</span>
+                    </a>
+                    <a href="murals.html" class="category-card animate-up delay-1">
+                        <img src="./public/assets/Mural/Yasser Arafat/1000166403.webp" alt="" loading="lazy">
+                        <span class="category-label"><span class="num">02</span>Murals</span>
+                    </a>
+                    <a href="books.html" class="category-card animate-up delay-2">
+                        <img src="./public/assets/Books/Welcome to hell/Welcome to Hell front cover.webp" alt="" loading="lazy">
+                        <span class="category-label"><span class="num">03</span>Books</span>
+                    </a>
+                    <a href="prints.html" class="category-card animate-up delay-3">
+                        <img src="./public/assets/prints/Kooz/Lines0330-01.webp" alt="" loading="lazy">
+                        <span class="category-label"><span class="num">04</span>Prints</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
+<!-- FOOTER -->
     <footer class="footer" id="contact">
-        <div class="container">
+        <div class="container footer-grid">
+            <div>
+                <p class="eyebrow">Get in touch</p>
+                <a href="mailto:sabaaneh@gmail.com" class="footer-mail">sabaaneh@gmail.com</a>
+            </div>
             <div class="social-links">
                 <a href="https://www.instagram.com/sabaaneh/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://x.com/sabaaneh" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
                 <a href="https://www.facebook.com/msabaaneh" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="mailto:sabaaneh@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="footer-email"><a href="mailto:sabaaneh@gmail.com"><i class="fas fa-envelope"></i> sabaaneh@gmail.com</a></p>
-            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved. Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Mohammad Sabaaneh. All rights reserved.</p>
+            <p>Powered by <a href="https://el7mz.com" target="_blank" rel="noopener" class="credit">el7mz.com</a></p>
         </div>
     </footer>
+<!-- /FOOTER -->
 
     <script type="module" src="./main.js"></script>
 </body>
