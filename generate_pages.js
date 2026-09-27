@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import sharp from 'sharp';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -94,6 +95,12 @@ async function getWebpFiles(dir) {
     } catch { return []; }
 }
 
+// Panoramas (much wider than tall) span the full gallery width
+async function wideClass(file) {
+    const { width, height } = await sharp(file).metadata();
+    return width / height > 2.5 ? ' wide' : '';
+}
+
 async function getSubdirs(dir) {
     try {
         const items = await fs.readdir(dir, { withFileTypes: true });
@@ -168,7 +175,7 @@ async function generateMurals() {
     for (const dir of dirs) {
         const files = await getWebpFiles(path.join(basePath, dir));
         if (files.length === 0) continue;
-        const imgs = files.map(f => `<img src="./public/assets/Mural/${dir}/${f}" alt="${dir} mural" class="animate-up" loading="lazy">`).join('\n                ');
+        const imgs = (await Promise.all(files.map(async f => `<img src="./public/assets/Mural/${dir}/${f}" alt="${dir} mural" class="animate-up${await wideClass(path.join(basePath, dir, f))}" loading="lazy">`))).join('\n                ');
         // Add video for Home mural
         let extra = '';
         if (dir === 'Home') {
@@ -293,7 +300,7 @@ async function generatePrints() {
     for (const dir of sortedDirs) {
         const files = await getWebpFiles(path.join(basePath, dir));
         if (files.length === 0) continue;
-        const imgs = files.map(f => `<img src="./public/assets/prints/${dir}/${f}" alt="${dir}" class="animate-up" loading="lazy">`).join('\n                ');
+        const imgs = (await Promise.all(files.map(async f => `<img src="./public/assets/prints/${dir}/${f}" alt="${dir}" class="animate-up${await wideClass(path.join(basePath, dir, f))}" loading="lazy">`))).join('\n                ');
         sections += gallerySection(dir, imgs);
     }
     const html = HEAD('Prints') + NAV + `<main class="page" id="main">${pageHeader('Printmaking', 'Prints')}${sections}</main>` + FOOTER + CLOSE;
