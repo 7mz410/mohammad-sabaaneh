@@ -1,0 +1,52 @@
+{
+    "Welcome to hell": [
+        { "language": "English", "title": "Welcome to Hell: From the West Bank to Gaza", "stores": [
+            ["Street Noise Books", "https://www.streetnoisebooks.com/welcome-to-hell-from-the-west-bank-to-gaza"],
+            ["Bookshop.org", "https://bookshop.org/p/books/welcome-to-hell-from-the-west-bank-to-gaza-mohammad-sabaaneh/a08b1cecbd4c4e9b?ean=9781951491529"],
+            ["Amazon", "https://www.amazon.com/Welcome-Hell-West-Bank-Gaza/dp/1951491521"]
+        ] }
+    ],
+    "30 second from Gaza": [
+        { "language": "English", "title": "30 Seconds from Gaza: Diary of Genocide", "stores": [
+            ["Interlink Books", "https://interlinkbooks.com/product/30-seconds-from-gaza/"],
+            ["Amazon", "https://www.amazon.com/30-Seconds-Gaza-Diary-Genocide/dp/1623716144"],
+            ["Waterstones (UK)", "https://www.waterstones.com/book/30-seconds-from-gaza/mohammad-sabaaneh/ilan-pappe/9781623716141"]
+        ] },
+        { "language": "Français", "title": "30 secondes à Gaza", "stores": [
+            ["Alifbata", "https://alifbata.fr/produit/30-secondes-a-gaza/"]
+        ] },
+        { "language": "Italiano", "title": "30 Seconds from Gaza", "stores": [
+            ["Mesogea", "https://www.mesogea.it/prodotto/30-seconds-from-gaza/"]
+        ] },
+        { "language": "Español", "title": "30 segundos en Gaza", "stores": [
+            ["Fundación Al Fanar", "https://www.fundacionalfanar.org/compra-30-segundos-en-gaza/"]
+        ] }
+    ],
+    "Power Born of Dream": [
+        { "language": "English", "title": "Power Born of Dreams: My Story is Palestine", "stores": [
+            ["Street Noise Books", "https://www.streetnoisebooks.com/power-born-of-dreams-my-story-is-palestine"],
+            ["Amazon", "https://www.amazon.com/Power-Born-Dreams-Story-Palestine/dp/1951491149"]
+        ] },
+        { "language": "Français", "title": "Je ne partirai pas. Mon histoire est celle de la Palestine", "stores": [
+            ["Alifbata", "https://alifbata.fr/produit/je-ne-partirai-pas-mon-histoire-est-celle-de-la-palestine/"]
+        ] },
+        { "language": "Italiano", "title": "Racconto Palestina", "stores": [
+            ["Mesogea", "https://www.mesogea.it/prodotto/racconto-palestina/"]
+        ] }
+    ],
+    "Palestine White and Black": [
+        { "language": "English (US)", "title": "White and Black: Political Cartoons from Palestine", "stores": [
+            ["PM Press", "https://pmpress.org/index.php?l=product_detail&p=2007"],
+            ["Amazon", "https://www.amazon.com/White-Black-Political-Cartoons-Palestine/dp/1682570673"]
+        ] },
+        { "language": "English (UK)", "title": "Palestine in Black and White", "stores": [
+            ["Saqi Books", "https://saqibooks.com/books/saqi/palestine-in-black-and-white/"]
+        ] },
+        { "language": "Español", "title": "Palestina en blanco y negro", "stores": [
+            ["Casa del Libro", "https://www.casadellibro.com/libro-palestina-en-blanco-y-negro-dibujos-politicos-de-palestina/9788472909038/8519863"]
+        ] },
+        { "language": "Català", "title": "Palestina en blanc i negre", "stores": [
+            ["Triangular Edicions", "https://www.triangularedicions.cat/producto/palestina-en-blanc-i-negre-muhammad-sabaaneh/"]
+        ] }
+    ]
+}

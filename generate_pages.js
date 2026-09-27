@@ -68,6 +68,8 @@ const BOOKS = {
     'Palestine White and Black': ['White and Black', 'Political Cartoons from Palestine', 'White and Black front cover.webp'],
 };
 
+const BUY_LINKS = JSON.parse(await fs.readFile(path.join(__dirname, 'content', 'buy-links.json'), 'utf8'));
+
 const HEAD = (title) => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -255,7 +257,23 @@ async function generateBooks() {
             text = `<section class="section pb-0"><div class="container"><div class="book-text">${text}</div></div></section>`;
         } catch {}
 
-        let sections = text + gallerySection('Covers', coverImgs);
+        const editions = BUY_LINKS[book] || [];
+        const buy = editions.length ? `
+        <section class="section pb-0">
+            <div class="container">
+                <div class="buy">
+                    <h2 class="buy-title">Buy the book</h2>
+                    ${editions.map(e => `
+                    <div class="edition">
+                        <p class="edition-lang">${e.language}</p>
+                        <p class="edition-title">${e.title}</p>
+                        <div class="stores">${e.stores.map(([name, url]) => `<a href="${url.replace(/&/g, '&amp;')}" target="_blank" rel="noopener" class="store">${name} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`).join('')}</div>
+                    </div>`).join('')}
+                </div>
+            </div>
+        </section>` : '';
+
+        let sections = buy + text + gallerySection('Covers', coverImgs);
         if (videoHtml) sections += `<section class="section bg-dark"><div class="container"><h2 class="section-title sub text-center">Video</h2>${videoHtml}</div></section>`;
         if (pagesImgs) sections += gallerySection('Pages', pagesImgs);
 
