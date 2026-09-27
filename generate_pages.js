@@ -310,8 +310,26 @@ async function syncIndex() {
     console.log('Synced index.html');
 }
 
+// ======================= 404 =======================
+async function generate404() {
+    // <base> keeps relative asset paths working at any missing URL depth
+    const html = HEAD('Page not found').replace('<head>', '<head>\n    <base href="/">') + NAV + `
+    <main class="page" id="main">
+        <section class="section">
+            <div class="container text-center">
+                <p class="eyebrow">Error 404</p>
+                <h1 class="section-title">Page not found</h1>
+                <a href="index.html" class="btn">Back to home</a>
+            </div>
+        </section>
+    </main>` + FOOTER + CLOSE;
+    await fs.writeFile(path.join(__dirname, '404.html'), html);
+    console.log('Generated 404.html');
+}
+
 async function main() {
     await syncIndex();
+    await generate404();
     await generateCartoons();
     await generateMurals();
     await generateBooks();
