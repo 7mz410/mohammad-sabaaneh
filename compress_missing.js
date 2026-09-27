@@ -77,10 +77,10 @@ async function main() {
     const portfolioDst = path.join(OUT, 'Sabaaneh_Portfolio.pdf');
     try { await fs.access(portfolioSrc); await fs.copyFile(portfolioSrc, portfolioDst); console.log('Copied Sabaaneh Portfolio.pdf'); } catch(e) { console.error(e.message); }
 
-    // 6. sabaaneh high.pdf -> copy to prints section
+    // 6. sabaaneh high.pdf -> copy to prints section (only if missing: the committed copy is compressed for Cloudflare's 25MB limit)
     const highSrc = path.join(ROOT, 'sabaaneh high.pdf');
     const highDst = path.join(OUT, 'prints', 'Sabaaneh_High.pdf');
-    try { await fs.access(highSrc); await fs.copyFile(highSrc, highDst); console.log('Copied sabaaneh high.pdf'); } catch(e) { console.error(e.message); }
+    try { await fs.access(highDst); } catch { await fs.copyFile(highSrc, highDst); console.log('Copied sabaaneh high.pdf'); }
 
     // 7. Signature
     const sigSrc = path.join(ROOT, 'signiture.jpg');
