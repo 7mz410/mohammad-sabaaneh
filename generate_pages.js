@@ -90,7 +90,7 @@ const CLOSE = `
 async function getWebpFiles(dir) {
     try {
         const items = await fs.readdir(dir, { withFileTypes: true });
-        return items.filter(f => f.isFile() && f.name.endsWith('.webp')).map(f => f.name);
+        return items.filter(f => f.isFile() && f.name.endsWith('.webp')).map(f => f.name).sort();
     } catch { return []; }
 }
 
@@ -160,7 +160,10 @@ async function generateCartoons() {
 // ======================= MURALS =======================
 async function generateMurals() {
     const basePath = path.join(__dirname, 'public', 'assets', 'Mural');
-    const dirs = await getSubdirs(basePath);
+    // Newest first; folders not listed here go at the end
+    const ORDER = ['Jerusalem', 'Home', 'Yasser Arafat', 'Vanella', 'Ink'];
+    const dirs = (await getSubdirs(basePath)).sort((a, b) =>
+        (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
     let sections = '';
     for (const dir of dirs) {
         const files = await getWebpFiles(path.join(basePath, dir));
