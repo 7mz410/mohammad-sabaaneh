@@ -59,12 +59,12 @@ const FOOTER = `
         </div>
     </footer>`;
 
-// Folder name -> display title
+// Folder name -> [title, subtitle, English cover file]
 const BOOKS = {
-    'Welcome to hell': ['Welcome to Hell', 'From the West Bank to Gaza'],
-    '30 second from Gaza': ['30 Seconds from Gaza', 'Diary of Genocide'],
-    'Power Born of Dream': ['Power Born of Dreams', 'My Story is Palestine'],
-    'Palestine White and Black': ['White and Black', 'Political Cartoons from Palestine'],
+    'Welcome to hell': ['Welcome to Hell', 'From the West Bank to Gaza', 'Welcome to Hell front cover.webp'],
+    '30 second from Gaza': ['30 Seconds from Gaza', 'Diary of Genocide', '30 Seconds from Gaza front cover.webp'],
+    'Power Born of Dream': ['Power Born of Dreams', 'My Story is Palestine', 'Power Born of Dreams Galley-1.webp'],
+    'Palestine White and Black': ['White and Black', 'Political Cartoons from Palestine', 'White and Black front cover.webp'],
 };
 
 const HEAD = (title) => `<!DOCTYPE html>
@@ -187,7 +187,7 @@ async function generateBooks() {
     let cardsHtml = '';
     for (const book of bookDirs) {
         const files = await getWebpFiles(path.join(basePath, book));
-        const cover = files.find(f => /front cover/i.test(f)) || files[0];
+        const cover = files.includes(BOOKS[book][2]) ? BOOKS[book][2] : files[0];
         const coverImg = cover ? `./public/assets/Books/${book}/${cover}` : '';
         const slug = book.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
         const [title, subtitle] = BOOKS[book];
@@ -222,6 +222,7 @@ async function generateBooks() {
         const pageFiles = await getWebpFiles(path.join(basePath, book, 'Pages'));
         const [title, subtitle] = BOOKS[book];
 
+        files.sort((a, b) => (b === BOOKS[book][2]) - (a === BOOKS[book][2]));
         let coverImgs = files.map(f => `<img src="./public/assets/Books/${book}/${f}" alt="${title} cover" class="animate-up" loading="lazy">`).join('\n                ');
 
         let pagesImgs = '';

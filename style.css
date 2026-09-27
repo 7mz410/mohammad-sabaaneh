@@ -655,10 +655,10 @@ body.menu-open .navbar {
 
 .book-card img {
     width: 100%;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
-    background: var(--ink-3);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
     transition: transform 0.5s var(--ease);
 }
 
