@@ -67,7 +67,7 @@ async function main() {
     }
 
     // 4. Cartoons - all years
-    const years = ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'];
+    const years = ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
     for (const year of years) {
         await processDir(path.join(ROOT, 'Cartoon', year), path.join(OUT, 'Cartoon', year));
     }

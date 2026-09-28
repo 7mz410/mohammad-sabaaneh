@@ -156,7 +156,7 @@ async function generateCartoons() {
     sections = `
     <section class="section pb-0">
         <div class="container">
-            <p class="eyebrow text-center">2017 – 2024</p>
+            <p class="eyebrow text-center">2017 – 2025</p>
             <h1 class="section-title text-center">Cartoons</h1>
             <nav class="tabs" aria-label="Year">${tabs}</nav>
         </div>

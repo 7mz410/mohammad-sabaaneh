@@ -9,7 +9,7 @@
 
 ```
 Sabaaneh web/              ← المصادر الأصلية (خارج git، ~2GB)
-├── Cartoon/<سنة>/          كاريكاتير 2017–2024
+├── Cartoon/<سنة>/          كاريكاتير 2017–2025
 ├── Mural /<اسم>/           جداريات (انتبه: مسافة بعد "Mural " وبعض المجلدات الفرعية)
 ├── prints/<مجموعة>/        مطبوعات: Intaglio, white and black, Kooz, Digital, Big prints, Natives
 ├── Books/<كتاب>/           أغلفة + Pages/ (صفحات من الكتاب)
