@@ -434,7 +434,7 @@ async function buildWorldMap() {
     const places = Object.values(MAP).flat().length;
     // Region boxes [west, north, east, south] projected to viewBox rects for the zoom buttons
     const box = ([w, n, e, so]) => { const [x0, y0] = projection([w, n]); const [x1, y1] = projection([e, so]); return [x0, y0, x1 - x0, y1 - y0].map(v => +v.toFixed(1)); };
-    const regions = { na: box([-128, 52, -66, 30]), eu: box([-11, 62, 26, 35]), me: box([30, 38, 54, 24]), af: box([-18, 38, 40, -36]) };
+    const regions = { na: box([-128, 52, -66, 30]), eu: box([-11, 62, 40, 35]), me: box([30, 38, 54, 24]), af: box([-18, 38, 40, -36]) };
 
     return `
         <section class="section worldmap-section" id="world" aria-labelledby="world-title">

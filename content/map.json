@@ -833,6 +833,29 @@
             ]
         }
     ],
+    "Russia": [
+        {
+            "place": "Moscow",
+            "at": [
+                37.62,
+                55.75
+            ],
+            "items": [
+                "2022 · PEREVOROT Illustrated — international group comic-art exhibition (80 artists)",
+                "2022 · Shown again at Park-Hotel White Lanes, Moscow region (17 Apr – 12 May)"
+            ]
+        },
+        {
+            "place": "St. Petersburg",
+            "at": [
+                30.32,
+                59.94
+            ],
+            "items": [
+                "2022 · PEREVOROT Illustrated — international group comic-art exhibition"
+            ]
+        }
+    ],
     "Palestine": [
         {
             "place": "Jenin",
