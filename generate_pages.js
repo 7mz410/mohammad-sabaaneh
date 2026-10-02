@@ -74,6 +74,7 @@ const readJson = async (name) => JSON.parse(await fs.readFile(path.join(__dirnam
 const REVIEWS = await readJson('reviews.json');
 const AWARDS = await readJson('awards.json');
 const PRESS = await readJson('press.json');
+const PRINTS = await readJson('prints.json');
 
 // Linked screenshot + quote cards (reviews, awards, news, interviews)
 function cardsSection(title, items = []) {
@@ -315,6 +316,23 @@ async function generateBooks() {
 }
 
 // ======================= PRINTS =======================
+const PRINT_NOTES = {
+    lino: '<p class="print-note"><i class="fas fa-signature" aria-hidden="true"></i> Hand-pulled linocuts, signed and numbered by the artist. <a href="mailto:sabaaneh@gmail.com?subject=Linocut%20print%20enquiry">Price on request</a>.</p>',
+    digital: '<p class="print-note"><i class="fas fa-signature" aria-hidden="true"></i> Signed prints of these digital works are available directly from the artist. <a href="mailto:sabaaneh@gmail.com?subject=Signed%20digital%20print%20enquiry">Ask about a signed print</a>.</p>',
+};
+
+const COLLECT = `
+    <section class="section pb-0">
+        <div class="container">
+            <div class="collect">
+                <p class="eyebrow">Collect</p>
+                <h2 class="collect-title">Own an original Sabaaneh</h2>
+                <p>Linocut prints are hand-pulled, signed and numbered by the artist. Signed prints of the digital works are also available. Each work below lists its size and edition.</p>
+                <p class="collect-ship"><i class="fas fa-truck" aria-hidden="true"></i> Shipping costs are paid by the collector.</p>
+                <a href="mailto:sabaaneh@gmail.com?subject=Artwork%20enquiry" class="btn"><i class="fas fa-envelope" aria-hidden="true"></i> Enquire about a work</a>
+            </div>
+        </div>
+    </section>`;
 async function generatePrints() {
     const basePath = path.join(__dirname, 'public', 'assets', 'prints');
     const dirs = await getSubdirs(basePath);
@@ -330,6 +348,8 @@ async function generatePrints() {
         </div>
     </section>`;
 
+    sections += COLLECT;
+
     // Sort so Digital comes last
     const sortedDirs = dirs.filter(d => d !== 'Digital');
     const hasDigital = dirs.includes('Digital');
@@ -338,8 +358,13 @@ async function generatePrints() {
     for (const dir of sortedDirs) {
         const files = await getWebpFiles(path.join(basePath, dir));
         if (files.length === 0) continue;
-        const imgs = (await Promise.all(files.map(async f => `<img src="./public/assets/prints/${dir}/${f}" alt="${dir}" class="animate-up${await wideClass(path.join(basePath, dir, f))}" loading="lazy">`))).join('\n                ');
-        sections += gallerySection(dir, imgs);
+        const technique = PRINTS.technique[dir] || '';
+        const imgs = (await Promise.all(files.map(async f => {
+            const img = `<img src="./public/assets/prints/${dir}/${f}" alt="${technique || dir}" class="animate-up${await wideClass(path.join(basePath, dir, f))}" loading="lazy">`;
+            const w = PRINTS.works[`${dir}/${f}`];
+            return w ? `<figure class="print">${img}<figcaption>${[technique, w.size, w.edition].join(' · ')}</figcaption></figure>` : img;
+        }))).join('\n                ');
+        sections += gallerySection(dir, imgs, PRINT_NOTES[PRINTS.notes[dir]] || '');
     }
     const html = HEAD('Prints') + NAV + `<main class="page" id="main">${pageHeader('Printmaking', 'Prints')}${sections}</main>` + FOOTER + CLOSE;
     await fs.writeFile(path.join(__dirname, 'prints.html'), html);

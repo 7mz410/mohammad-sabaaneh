@@ -1,0 +1,95 @@
+{
+    "technique": {
+        "Kooz": "Linocut",
+        "Natives": "Linocut",
+        "Big prints": "Linocut",
+        "white and black": "Linocut",
+        "Intaglio": "Intaglio",
+        "Digital": "Digital art"
+    },
+    "notes": {
+        "Kooz": "lino",
+        "Natives": "lino",
+        "Big prints": "lino",
+        "white and black": "lino",
+        "Digital": "digital"
+    },
+    "works": {
+        "Kooz/Lines0330-01.webp": {
+            "size": "53 × 21 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-02.webp": {
+            "size": "40 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-03.webp": {
+            "size": "58 × 16 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-04.webp": {
+            "size": "30 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-05.webp": {
+            "size": "30 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-06.webp": {
+            "size": "30 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-07.webp": {
+            "size": "30 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-08.webp": {
+            "size": "30 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-09.webp": {
+            "size": "30 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Kooz/Lines0330-10.webp": {
+            "size": "30 × 40 cm",
+            "edition": "Edition of 100"
+        },
+        "Natives/HPSC3860.webp": {
+            "size": "82 × 51 cm",
+            "edition": "Edition of 25"
+        },
+        "Natives/HPSC3859.webp": {
+            "size": "82 × 51 cm",
+            "edition": "Edition of 25"
+        },
+        "Natives/sabaaneh (14).webp": {
+            "size": "82 × 51 cm",
+            "edition": "Edition of 25"
+        },
+        "Natives/sabaaneh (1).webp": {
+            "size": "45 × 57 cm",
+            "edition": "Edition of 50"
+        },
+        "Natives/sabaaneh (13).webp": {
+            "size": "45 × 57 cm",
+            "edition": "Edition of 50"
+        },
+        "Natives/18869853_10154374599880806_98882023_o.webp": {
+            "size": "21 × 21 cm",
+            "edition": "Edition of 50"
+        },
+        "Big prints/20200824_160803.webp": {
+            "size": "90 × 90 cm",
+            "edition": "Edition of 18"
+        },
+        "Big prints/20250210_164851.webp": {
+            "size": "70 × 47 cm",
+            "edition": "Edition of 30"
+        },
+        "Big prints/20250210_165037.webp": {
+            "size": "70 × 47 cm",
+            "edition": "Edition of 30"
+        }
+    }
+}
