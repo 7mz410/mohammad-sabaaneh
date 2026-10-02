@@ -390,13 +390,25 @@
     ],
     "Morocco": [
         {
-            "place": "Morocco",
+            "place": "Casablanca",
             "at": [
                 -7.59,
                 33.57
             ],
             "items": [
-                "French edition printed in Morocco"
+                "2024 · Je ne partirai pas — Power Born of Dreams in French (Le Fennec)"
+            ]
+        }
+    ],
+    "Egypt": [
+        {
+            "place": "Cairo",
+            "at": [
+                31.24,
+                30.04
+            ],
+            "items": [
+                "Power Born of Dreams published by Dar Al-Mahrousa"
             ]
         }
     ],
