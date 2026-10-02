@@ -162,6 +162,14 @@
             "url": "https://berniegourley.com/2021/06/22/book-review-power-born-of-dreams-by-mohammad-sabaaneh/",
             "image": "pb-bernie.webp",
             "quote": "I enjoyed the art and found this to be an interesting read, but I wouldn’t recommend readers take it at face value as a fair account of the conflict."
+        },
+        {
+            "source": "ActuaBD",
+            "author": "Jorge Sanchez",
+            "url": "https://www.actuabd.com/Je-ne-partirai-pas-mon-histoire-est-celle-de-la-Palestine-Par-Mohammad-Sabaaneh",
+            "image": "fr-actuabd2.webp",
+            "lang": "fr",
+            "quote": "Œuvre émouvante d’un artiste ayant fait ses armes dans le dessin de presse."
         }
     ],
     "Welcome to hell": [
@@ -236,6 +244,14 @@
             "url": "https://www.newarab.com/features/capturing-brutality-occupation-30-seconds-gaza",
             "image": "gz-newarab.webp",
             "quote": "Mohammad’s Cubist drawings in this collection occupy a unique place in memory, making them hard to forget."
+        },
+        {
+            "source": "Invictapalestina",
+            "author": "Pina Fioretti",
+            "url": "https://www.invictapalestina.org/archives/52928",
+            "image": "it-invicta.webp",
+            "lang": "it",
+            "quote": "“30 Seconds From Gaza” è un’opera che trasporta artisticamente l’esperienza devastante vissuta dall’autore Mohammad Sabaaneh e dall’intero popolo palestinese."
         }
     ]
 }

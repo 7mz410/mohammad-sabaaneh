@@ -9,6 +9,15 @@
             "quote": "The New York Public Library chooses the best new comics of 2026."
         },
         {
+            "source": "Deia",
+            "author": "Maite Redondo",
+            "year": "2026",
+            "url": "https://www.deia.eus/cultura/2026/02/11/comic-palestino-llega-bilbao-grito-10688790.html",
+            "image": "es-deia.webp",
+            "lang": "es",
+            "quote": "Sabaaneh forma también parte de la exposición que reúne en el Centro Cívico Municipal de Bilbao el trabajo de diez autoras y autores palestinos que utilizan el lenguaje visual del cómic como herramienta de expresión."
+        },
+        {
             "source": "Al-Araby Al-Jadeed",
             "author": "",
             "year": "2024",
@@ -59,6 +68,33 @@
             "lang": "ar"
         },
         {
+            "source": "Scomunicando",
+            "author": "",
+            "year": "2023",
+            "url": "https://www.scomunicando.it/notizie/attualissimo-vi-racconto-palestina-di-mohammad-sabaaneh/",
+            "image": "it-scom.webp",
+            "lang": "it",
+            "quote": "La casa editrice siciliana Mesogea ha organizzato un tour nazionale che ha toccato 10 città italiane."
+        },
+        {
+            "source": "Anbamed",
+            "author": "",
+            "year": "2023",
+            "url": "https://www.anbamed.it/2023/09/19/vi-racconto-palestina/",
+            "image": "it-anbamed.webp",
+            "lang": "it",
+            "quote": "Racconto Palestina, un libro di straordinaria potenza artistica, umana e letteraria."
+        },
+        {
+            "source": "Avanti!",
+            "author": "",
+            "year": "2023",
+            "url": "https://www.avantionline.it/femminile-palestinese-il-racconto-continua-con-mohammad-sabaaneh/",
+            "image": "it-avanti.webp",
+            "lang": "it",
+            "quote": "La rassegna ospita ben tre incontri con il cartoonist palestinese Mohammad Sabaaneh in Italia per presentare il suo graphic novel “Racconto Palestina”."
+        },
+        {
             "source": "Middle East Monitor",
             "author": "",
             "year": "2019",
@@ -105,6 +141,15 @@
             "url": "https://www.middleeasteye.net/news/palestinian-cartoonist-defends-symbolic-prophet-caricature-while-abbas-condemns-it-278159942",
             "image": "nw-mee.webp",
             "quote": "The intention was not to represent the prophet. [It was to] symbolise Islam and its role of disseminating light and love on the human race."
+        },
+        {
+            "source": "lundimatin",
+            "author": "",
+            "year": "",
+            "url": "https://lundi.am/30-secondes-a-Gaza",
+            "image": "fr-lundi.webp",
+            "lang": "fr",
+            "quote": "Parce que j’ai publié ce qui s’y passait, mes comptes sur les réseaux sociaux ont été supprimés et, avec eux, plus de quinze années de travail d’information."
         }
     ],
     "Festivals": [
@@ -208,12 +253,30 @@
             "quote": "We are surrounded by Cubism, we are surrounded by geometric shapes and geometric forms created by the occupation."
         },
         {
+            "source": "Valencia Plaza",
+            "author": "",
+            "year": "2026",
+            "url": "https://valenciaplaza.com/libros-comic-valencia-comunitat-valenciana/mohammad-sabaaneh-autor-palestino-atrapado-en-valencia-el-comic-es-una-herramienta-crucial-para-contar-lo-que-esta-pasando-en-gaza",
+            "image": "es-valencia.webp",
+            "lang": "es",
+            "quote": "El cómic es una herramienta crucial para contar lo que está pasando en Gaza."
+        },
+        {
             "source": "Fanboy Factor",
             "author": "Anthony Andujar Jr.",
             "year": "2025",
             "url": "https://fanboyfactor.com/2025/11/talking-with-annabelle-heckler-and-mohammad-sabaaneh/",
             "image": "iv-fanboy.webp",
             "quote": "We asked artists to bring their resistance and their vision to our pages."
+        },
+        {
+            "source": "Politis",
+            "author": "Marius Jouanny",
+            "year": "2025",
+            "url": "https://www.politis.fr/articles/2025/02/bd-mohammad-sabaaneh-pour-un-artiste-palestinien-cest-impossible-dignorer-le-genocide-a-gaza/",
+            "image": "fr-politis.webp",
+            "lang": "fr",
+            "quote": "Pour un artiste palestinien, c’est impossible d’ignorer le génocide à Gaza."
         },
         {
             "source": "ZNetwork",
@@ -232,12 +295,31 @@
             "quote": "Maybe you cannot imagine that in Palestine we do not have linocut tools or workshops to learn how to do it."
         },
         {
-            "source": "American Friends Service Committee",
+            "source": "Público",
             "author": "",
-            "year": "",
-            "url": "https://afsc.org/news/drawing-justice-mohammad-sabaaneh-palestine-art-and-hope",
-            "image": "iv-afsc.webp",
-            "quote": "If we want to support them, we should look at them as human beings that have needs."
+            "year": "2024",
+            "url": "https://www.publico.es/culturas/cada-vez-nueva-ilustracion-pienso-sera-me-lleve-carcel.html",
+            "image": "es-publico.webp",
+            "lang": "es",
+            "quote": "Cada vez que hago una nueva ilustración pienso que esa será la que me lleve a la cárcel."
+        },
+        {
+            "source": "El Espectador (EFE)",
+            "author": "",
+            "year": "2024",
+            "url": "https://www.elespectador.com/el-magazin-cultural/mohammad-sabaaneh-ilustrador-palestino-la-gente-no-aguanta-ver-30-segundos-de-lo-que-pasa-en-gaza/",
+            "image": "es-espect.webp",
+            "lang": "es",
+            "quote": "Son solo 30 segundos de toda una vida de un ser humano que está sufriendo en Gaza. Y tras estos 30 segundos, su vida habrá cambiado."
+        },
+        {
+            "source": "Infobae (Europa Press)",
+            "author": "",
+            "year": "2024",
+            "url": "https://www.infobae.com/america/agencias/2024/10/14/el-caricaturista-palestino-mohamed-sabaaneh-no-hay-libertad-de-expresion-cuando-se-trata-de-palestina/",
+            "image": "es-infobae.webp",
+            "lang": "es",
+            "quote": "No hay libertad de expresión cuando se trata de Palestina."
         },
         {
             "source": "As-Safir Al-Arabi",
@@ -249,13 +331,13 @@
             "quote": "أفكر بأن دورنا كمثقفين أكبر من المنتج الثقافي."
         },
         {
-            "source": "Raya FM",
-            "author": "",
-            "year": "",
-            "url": "https://www.raya.ps/news/1130432.html",
-            "image": "nw-raya.webp",
-            "lang": "ar",
-            "quote": "الكاريكاتير فن صعب، يحتاج للتفكير خارج الصندوق."
+            "source": "Palestina Cultura Libertà",
+            "author": "Alessandra Mecozzi",
+            "year": "2023",
+            "url": "https://palestinaculturaliberta.org/2023/10/03/mohammad-sabaaneh-palestina-in-bianco-e-nero/",
+            "image": "it-pcl.webp",
+            "lang": "it",
+            "quote": "Grigio è il muro ruvido, su cui molti incidono il proprio nome. Io non ci sono mai riuscito… così ho deciso di incidere le loro storie."
         },
         {
             "source": "Mondoweiss",
@@ -283,12 +365,13 @@
             "quote": "What’s happening here isn’t conflict – what is happening here is occupation, it’s black and white."
         },
         {
-            "source": "Truthdig — On Contact",
-            "author": "Chris Hedges",
-            "year": "",
-            "url": "https://www.truthdig.com/videos/chris-hedges-cartoonist-mohammad-sabaaneh-israeli-occupation-palestine-video/",
-            "image": "iv-hedges.webp",
-            "quote": "Chris Hedges sits down with Palestinian cartoonist Mohammad Saba’aneh to talk about the state of affairs in Palestine."
+            "source": "L’Humanité / AFPS",
+            "author": "Pierre Barbancey",
+            "year": "2018",
+            "url": "https://www.france-palestine.org/Mohammad-Sabaaneh-un-caricaturiste-qui-derange",
+            "image": "fr-afps.webp",
+            "lang": "fr",
+            "quote": "Pour ma mère, nous montrer les dessins de Naji Al Ali était un outil, une façon de nous parler de la Palestine, le pays de nos ancêtres."
         },
         {
             "source": "The World (PRX)",
@@ -297,6 +380,31 @@
             "url": "https://theworld.org/stories/2017/05/04/mohammad-sabaaneh-cartoons-occupation-palestine",
             "image": "iv-world.webp",
             "quote": "It's not a conflict. It's an occupation."
+        },
+        {
+            "source": "American Friends Service Committee",
+            "author": "",
+            "year": "",
+            "url": "https://afsc.org/news/drawing-justice-mohammad-sabaaneh-palestine-art-and-hope",
+            "image": "iv-afsc.webp",
+            "quote": "If we want to support them, we should look at them as human beings that have needs."
+        },
+        {
+            "source": "Raya FM",
+            "author": "",
+            "year": "",
+            "url": "https://www.raya.ps/news/1130432.html",
+            "image": "nw-raya.webp",
+            "lang": "ar",
+            "quote": "الكاريكاتير فن صعب، يحتاج للتفكير خارج الصندوق."
+        },
+        {
+            "source": "Truthdig — On Contact",
+            "author": "Chris Hedges",
+            "year": "",
+            "url": "https://www.truthdig.com/videos/chris-hedges-cartoonist-mohammad-sabaaneh-israeli-occupation-palestine-video/",
+            "image": "iv-hedges.webp",
+            "quote": "Chris Hedges sits down with Palestinian cartoonist Mohammad Saba’aneh to talk about the state of affairs in Palestine."
         }
     ]
 }
