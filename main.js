@@ -290,7 +290,7 @@ if (worldmap) {
         const half = tip.offsetWidth / 2;
         tip.style.left = `${Math.min(Math.max(anchor.left + anchor.width / 2 - box.left, half), box.width - half)}px`;
         tip.style.top = `${anchor.top - box.top}px`;
-        tip.style.transform = anchor.top - tip.offsetHeight - 20 < 0 ? 'translate(-50%, 18px)' : '';
+        tip.style.transform = anchor.top - box.top - tip.offsetHeight - 20 < 48 ? 'translate(-50%, 18px)' : ''; // flip below near the top controls
     };
     const hide = () => {
         current = null;
