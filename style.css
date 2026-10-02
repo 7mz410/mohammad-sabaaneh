@@ -870,6 +870,36 @@ body.menu-open .navbar {
 }
 
 /* About */
+.bio-more summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    margin: 0.25rem 0 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--paper);
+    border-bottom: 1px solid var(--red);
+}
+
+.bio-more summary::-webkit-details-marker { display: none; }
+
+.bio-more summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--red-text);
+    transition: transform 0.3s var(--ease);
+}
+
+.bio-more[open] summary::after { transform: rotate(45deg); }
+.bio-more[open] summary { font-size: 0; }
+.bio-more[open] summary::before { content: 'Read less'; font-size: 0.95rem; letter-spacing: 0.15em; }
+.bio-more[open] summary::after { font-size: 1.2rem; }
+
 .about-grid {
     display: grid;
     grid-template-columns: 5fr 7fr;
