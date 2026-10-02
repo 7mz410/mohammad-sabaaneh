@@ -329,7 +329,7 @@ const COLLECT = `
                 <h2 class="collect-title">Own an original Sabaaneh</h2>
                 <p>Linocut prints are hand-pulled, signed and numbered by the artist. Signed prints of the digital works are also available. Each work below lists its size and edition.</p>
                 <p class="collect-ship"><i class="fas fa-truck" aria-hidden="true"></i> Shipping costs are paid by the collector.</p>
-                <a href="mailto:sabaaneh@gmail.com?subject=Artwork%20enquiry" class="btn"><i class="fas fa-envelope" aria-hidden="true"></i> Enquire about a work</a>
+                <a href="https://wa.me/970599835218?text=Hello%20Mohammad%2C%20I%27m%20interested%20in%20one%20of%20your%20works." target="_blank" rel="noopener" class="btn"><i class="fab fa-whatsapp" aria-hidden="true"></i> Enquire about a work</a>
             </div>
         </div>
     </section>`;
