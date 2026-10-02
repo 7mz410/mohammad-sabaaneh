@@ -416,26 +416,44 @@ async function buildWorldMap() {
         return MAP[name] ? '' : `<path d="${toPath(f)}"/>`;
     }).join('');
     const byName = Object.fromEntries(countries.map(f => [f.properties.name, f]));
-    // Pins sit on the city where the activity happened; listed order = draw order
-    const active = Object.entries(MAP).map(([name, { at, items }]) => {
-        const [x, y] = projection(at).map(v => v.toFixed(1));
-        return `<g class="map-country${name === 'Palestine' ? ' is-home' : ''}" tabindex="0" role="button" data-name="${esc(label(name))}" data-items="${esc(JSON.stringify(items))}" aria-label="${esc(label(name))}: ${esc(items.join('; '))}">
-                <path d="${toPath(byName[name])}"/>
-                <circle class="map-pulse" cx="${x}" cy="${y}" r="4"/>
-                <circle class="map-pin" cx="${x}" cy="${y}" r="3"/>
+    // One pin per city/place; listed order = draw order (last on top)
+    const active = Object.entries(MAP).map(([name, points]) => {
+        const pins = points.map(({ place, at, items }) => {
+            const [x, y] = projection(at).map(v => v.toFixed(1));
+            return `<g class="map-point" tabindex="0" role="button" data-place="${esc(place)}" data-items="${esc(JSON.stringify(items))}" aria-label="${esc(place)}: ${esc(items.join('; '))}">
+                    <circle class="map-pulse" cx="${x}" cy="${y}" r="4"/>
+                    <circle class="map-pin" cx="${x}" cy="${y}" r="3"/>
+                </g>`;
+        }).join('');
+        return `<g class="map-country${name === 'Palestine' ? ' is-home' : ''}" data-name="${esc(label(name))}">
+                <path d="${toPath(byName[name])}"/>${pins}
             </g>`;
     }).join('');
     const names = Object.keys(MAP).reverse();
     const chips = names.map(n => `<button class="map-chip" data-name="${esc(label(n))}">${esc(label(n))}</button>`).join('');
+    const places = Object.values(MAP).flat().length;
+    // Region boxes [west, north, east, south] projected to viewBox rects for the zoom buttons
+    const box = ([w, n, e, so]) => { const [x0, y0] = projection([w, n]); const [x1, y1] = projection([e, so]); return [x0, y0, x1 - x0, y1 - y0].map(v => +v.toFixed(1)); };
+    const regions = { na: box([-128, 52, -66, 30]), eu: box([-11, 62, 26, 35]), me: box([30, 38, 54, 24]) };
 
     return `
         <section class="section worldmap-section" id="world" aria-labelledby="world-title">
             <div class="container">
                 <p class="eyebrow">Around the world</p>
                 <h2 class="section-title sub" id="world-title">Exhibitions, Books &amp; Activities</h2>
-                <p class="worldmap-count"><strong>${names.length}</strong> countries · hover or tap a country</p>
+                <p class="worldmap-count"><strong>${names.length}</strong> countries · <strong>${places}</strong> places · hover, tap or zoom</p>
                 <div class="worldmap">
-                    <svg viewBox="0 0 ${W} ${H}" role="group" aria-label="World map of exhibitions, books and activities">
+                    <div class="map-regions" role="group" aria-label="Zoom to region">
+                        <button data-region="world" class="is-active">World</button>
+                        <button data-region="na">North America</button>
+                        <button data-region="eu">Europe</button>
+                        <button data-region="me">Middle East</button>
+                    </div>
+                    <div class="map-zoom" role="group" aria-label="Map zoom">
+                        <button data-zoom="in" aria-label="Zoom in">+</button>
+                        <button data-zoom="out" aria-label="Zoom out">−</button>
+                    </div>
+                    <svg viewBox="0 0 ${W} ${H}" data-regions='${JSON.stringify(regions)}' role="group" aria-label="World map of exhibitions, books and activities">
                         <path class="map-graticule" d="${toPath(geoGraticule10())}"/>
                         <g class="map-land">${shapes}</g>
                         <g class="map-active">${active}</g>

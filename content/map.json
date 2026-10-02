@@ -1,137 +1,75 @@
 {
-    "United States of America": {
-        "at": [-74.0, 40.7],
-        "items": [
-            "White and Black, Power Born of Dreams, 30 Seconds from Gaza, Welcome to Hell",
-            "2017 · Honoured at UN Headquarters, New York",
-            "2023 · Painting shown at the UN for the 75th anniversary of the Nakba",
-            "Original works in the Library of Congress",
-            "Lectures: Columbia, Stanford, New School, SVA, UNC",
-            "2026 · Brooklyn Book Festival"
-        ]
-    },
-    "Canada": {
-        "at": [-79.4, 43.7],
-        "items": [
-            "2026 · Featured guest, Toronto Comic Arts Festival"
-        ]
-    },
-    "United Kingdom": {
-        "at": [-0.1, 51.5],
-        "items": [
-            "2018 · Palestine in Black and White (Saqi Books)",
-            "2018 · Edinburgh International Book Festival",
-            "2022 · Palestine Book Award, London",
-            "2023–2025 · Lakes International Comic Art Festival",
-            "MA in Illustration (Chevening Scholarship)",
-            "Lecture: University of Exeter"
-        ]
-    },
-    "France": {
-        "at": [2.35, 48.85],
-        "items": [
-            "2017 · First prize, l’Estaque press cartoon festival, Marseille",
-            "2018 · La Palestine en dessins, Paris",
-            "Je ne partirai pas & 30 secondes à Gaza (Alifbata)",
-            "2025 · Exhibition at the Angoulême comics festival"
-        ]
-    },
-    "Italy": {
-        "at": [12.5, 41.9],
-        "items": [
-            "2023 · Racconto Palestina (Mesogea) and a 10-city tour",
-            "2024 · 30 Seconds from Gaza (Mesogea)",
-            "2024 · Collective comics exhibition, Naples"
-        ]
-    },
-    "Spain": {
-        "at": [-3.7, 40.4],
-        "items": [
-            "2024 · 30 segundos en Gaza (Al Fanar), Casa Árabe, Madrid",
-            "2025 · Palestinian Comics Exhibition tour, curator",
-            "2026 · Valencia comics fair & Bilbao exhibition"
-        ]
-    },
-    "Netherlands": {
-        "at": [4.3, 52.1],
-        "items": [
-            "2019 · Exhibition at the International Criminal Court, The Hague"
-        ]
-    },
-    "Belgium": {
-        "at": [5.7, 50.0],
-        "items": [
-            "2018 · International cartoon festival, Bastogne"
-        ]
-    },
-    "Sweden": {
-        "at": [18.1, 59.3],
-        "items": [
-            "2024 · EWK Award for political cartooning"
-        ]
-    },
-    "Norway": {
-        "at": [10.75, 59.9],
-        "items": [
-            "2023 · HUMAN International Documentary Film Festival, Oslo"
-        ]
-    },
-    "Slovenia": {
-        "at": [14.5, 46.05],
-        "items": [
-            "2026 · Palestinian Comics Exhibition, Academy of Fine Arts, Ljubljana",
-            "Published in Slovenian"
-        ]
-    },
-    "Kosovo": {
-        "at": [21.2, 42.7],
-        "items": [
-            "2024 · Comics festival"
-        ]
-    },
-    "Germany": {
-        "at": [13.4, 52.5],
-        "items": [
-            "Published in German"
-        ]
-    },
-    "Greece": {
-        "at": [23.7, 38.0],
-        "items": [
-            "Published in Greek"
-        ]
-    },
-    "Albania": {
-        "at": [19.8, 41.3],
-        "items": [
-            "Published in Albanian"
-        ]
-    },
-    "Jordan": {
-        "at": [35.9, 31.95],
-        "items": [
-            "2007–2008 · Solo exhibition “Halet Shaghab”, Amman"
-        ]
-    },
-    "Lebanon": {
-        "at": [35.5, 33.9],
-        "items": [
-            "2008 · Dahiyeh exhibition after the Lebanon war"
-        ]
-    },
-    "Syria": {
-        "at": [36.3, 33.5],
-        "items": [
-            "2009 · Gaza exhibition"
-        ]
-    },
-    "Palestine": {
-        "at": [35.2, 31.9],
-        "items": [
-            "Lives and works in Ramallah",
-            "Curated exhibitions: Mahmoud Darwish Museum (2014), From the World to Jerusalem (2018), Shireen Abu Akleh tribute (2022)",
-            "2023 · First collective exhibition of Palestinian comics",
-            "Murals: Jerusalem, Yasser Arafat, Home"
-        ]
-    }
+    "Canada": [
+        { "place": "Toronto", "at": [-79.4, 43.7], "items": ["2026 · Featured guest, Toronto Comic Arts Festival"] }
+    ],
+    "United States of America": [
+        { "place": "Seattle, Tacoma & Olympia", "at": [-122.6, 47.3], "items": ["2017 · Book tour, Orca Books, Olympia", "2018 · Picture This! tour, Seattle & Tacoma"] },
+        { "place": "Portland", "at": [-122.68, 45.52], "items": ["2017 · Life and Prison in Palestine tour"] },
+        { "place": "San Francisco Bay Area", "at": [-122.27, 37.8], "items": ["2017 · Book tour", "2017 · Lectures, Stanford & San Francisco University"] },
+        { "place": "Los Angeles", "at": [-118.24, 34.05], "items": ["2017 · Book tour"] },
+        { "place": "Chicago", "at": [-87.63, 41.88], "items": ["2017 · Book tour"] },
+        { "place": "Detroit", "at": [-83.05, 42.33], "items": ["2017 · Book tour"] },
+        { "place": "Athens, Ohio", "at": [-82.1, 39.33], "items": ["2015 · Lecture, Ohio University"] },
+        { "place": "Chapel Hill & Durham", "at": [-79.0, 35.95], "items": ["2018 · Picture This! tour", "Lectures at UNC — White and Black taught to literature students"] },
+        { "place": "Washington DC & Baltimore", "at": [-77.04, 38.9], "items": ["Original works in the Library of Congress", "2017 · Book tour, DC & Baltimore", "2018 · Linocut exhibition, Jerusalem Fund Gallery"] },
+        { "place": "Philadelphia", "at": [-75.16, 39.95], "items": ["2017 · Book tour", "2025 · Book talk, Wooden Shoe Books"] },
+        { "place": "New York & New Jersey", "at": [-74.0, 40.7], "items": ["2017 · Honoured at UN Headquarters", "2023 · Painting shown at the UN for the 75th anniversary of the Nakba", "Lectures: Columbia, New School, SVA", "2017 · NY Comics & Picture-story Symposium", "2026 · Brooklyn Book Festival", "White and Black, Power Born of Dreams, Welcome to Hell published"] }
+    ],
+    "United Kingdom": [
+        { "place": "United Kingdom", "at": [-0.1, 51.5], "items": ["2018 · Palestine in Black and White (Saqi Books)", "2018 · Edinburgh International Book Festival", "2022 · Palestine Book Award, London", "2023–2025 · Lakes International Comic Art Festival", "MA in Illustration (Chevening Scholarship)", "Lecture: University of Exeter"] }
+    ],
+    "France": [
+        { "place": "France", "at": [2.35, 48.85], "items": ["2017 · First prize, l’Estaque press cartoon festival, Marseille", "2018 · La Palestine en dessins, Paris", "Je ne partirai pas & 30 secondes à Gaza (Alifbata)", "2025 · Exhibition at the Angoulême comics festival"] }
+    ],
+    "Spain": [
+        { "place": "Spain", "at": [-3.7, 40.4], "items": ["2024 · 30 segundos en Gaza (Al Fanar), Casa Árabe, Madrid", "2025 · Palestinian Comics Exhibition tour, curator", "2026 · Valencia comics fair & Bilbao exhibition"] }
+    ],
+    "Italy": [
+        { "place": "Italy", "at": [12.5, 41.9], "items": ["2023 · Racconto Palestina (Mesogea) and a 10-city tour", "2024 · 30 Seconds from Gaza (Mesogea)", "2024 · Collective comics exhibition, Naples"] }
+    ],
+    "Netherlands": [
+        { "place": "The Hague", "at": [4.3, 52.1], "items": ["2019 · Exhibition at the International Criminal Court"] }
+    ],
+    "Belgium": [
+        { "place": "Bastogne", "at": [5.7, 50.0], "items": ["2018 · International cartoon festival"] }
+    ],
+    "Switzerland": [
+        { "place": "Geneva", "at": [6.14, 46.2], "items": ["Exhibition, Geneva"] }
+    ],
+    "Germany": [
+        { "place": "Germany", "at": [13.4, 52.5], "items": ["Exhibition, Berlin", "Published in German"] }
+    ],
+    "Sweden": [
+        { "place": "Sweden", "at": [18.1, 59.3], "items": ["2024 · EWK Award for political cartooning"] }
+    ],
+    "Norway": [
+        { "place": "Oslo", "at": [10.75, 59.9], "items": ["2023 · HUMAN International Documentary Film Festival"] }
+    ],
+    "Slovenia": [
+        { "place": "Ljubljana", "at": [14.5, 46.05], "items": ["2026 · Palestinian Comics Exhibition, Academy of Fine Arts", "Published in Slovenian"] }
+    ],
+    "Kosovo": [
+        { "place": "Kosovo", "at": [21.2, 42.7], "items": ["2024 · Comics festival"] }
+    ],
+    "Albania": [
+        { "place": "Albania", "at": [19.8, 41.3], "items": ["Published in Albanian"] }
+    ],
+    "Greece": [
+        { "place": "Greece", "at": [23.7, 38.0], "items": ["Published in Greek"] }
+    ],
+    "Syria": [
+        { "place": "Syria", "at": [36.3, 33.5], "items": ["2009 · Gaza exhibition"] }
+    ],
+    "Lebanon": [
+        { "place": "Lebanon", "at": [35.5, 33.9], "items": ["2008 · Dahiyeh exhibition after the Lebanon war"] }
+    ],
+    "Jordan": [
+        { "place": "Amman", "at": [35.9, 31.95], "items": ["2007–2008 · Solo exhibition “Halet Shaghab”"] }
+    ],
+    "Qatar": [
+        { "place": "Qatar", "at": [51.53, 25.29], "items": ["International exhibition"] }
+    ],
+    "Palestine": [
+        { "place": "Palestine", "at": [35.2, 31.9], "items": ["Lives and works in Ramallah", "Curated exhibitions: Mahmoud Darwish Museum (2014), From the World to Jerusalem (2018), Shireen Abu Akleh tribute (2022)", "2023 · First collective exhibition of Palestinian comics", "Murals: Jerusalem, Yasser Arafat, Home"] }
+    ]
 }

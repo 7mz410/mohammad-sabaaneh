@@ -946,9 +946,57 @@ body.menu-open .navbar {
 .map-country.is-active path { fill: var(--red); }
 
 .map-pin { fill: var(--paper); stroke: var(--red); stroke-width: 2; transition: r 0.2s ease; }
-.map-country:hover .map-pin,
-.map-country.is-active .map-pin { r: 5; }
-.map-country.is-home .map-pin { fill: var(--red); stroke: var(--paper); r: 4; }
+.map-point { cursor: pointer; outline: none; }
+.map-point.is-active .map-pin,
+.map-point:hover .map-pin,
+.map-point:focus-visible .map-pin { fill: var(--red); stroke: var(--paper); }
+.map-country.is-home .map-pin { fill: var(--red); stroke: var(--paper); }
+.worldmap svg path, .map-pin, .map-pulse { vector-effect: non-scaling-stroke; }
+.worldmap svg { cursor: grab; touch-action: pan-y; }
+.worldmap svg.is-dragging { cursor: grabbing; }
+
+.map-regions,
+.map-zoom {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    gap: 0.35rem;
+}
+
+.map-regions { top: 0; left: 0; flex-wrap: wrap; }
+.map-zoom { top: 0; right: 0; flex-direction: column; }
+
+.map-regions button,
+.map-zoom button {
+    min-height: 36px;
+    padding: 0 0.85rem;
+    background: rgba(13, 13, 13, 0.85);
+    border: 1px solid var(--line);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.map-zoom button { width: 40px; height: 40px; padding: 0; font-size: 1.3rem; letter-spacing: 0; }
+
+.map-regions button:hover,
+.map-zoom button:hover,
+.map-regions button.is-active { color: var(--paper); border-color: var(--red); background: rgba(200, 16, 46, 0.25); }
+
+.map-tip-place {
+    margin: 0.6rem 0 0.3rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red-text);
+}
+
+.map-tip h3 + .map-tip-place { margin-top: 0; }
 
 .map-pulse {
     fill: none;
@@ -1680,6 +1728,8 @@ body.menu-open .navbar {
 }
 
 @media (max-width: 700px) {
+    .map-regions { position: static; margin-bottom: 0.75rem; }
+    .map-zoom { top: 52px; }
     .map-tip {
         position: static;
         max-width: none;
