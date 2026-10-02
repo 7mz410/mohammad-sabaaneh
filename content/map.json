@@ -136,61 +136,402 @@
     ],
     "United Kingdom": [
         {
-            "place": "United Kingdom",
+            "place": "London",
             "at": [
-                -0.1,
+                -0.12,
                 51.5
             ],
             "items": [
                 "2018 · Palestine in Black and White (Saqi Books)",
-                "2018 · Edinburgh International Book Festival",
-                "2022 · Palestine Book Award, London",
-                "2023–2025 · Lakes International Comic Art Festival",
-                "MA in Illustration (Chevening Scholarship)",
-                "Lecture: University of Exeter"
+                "2022 · Palestine Book Award"
+            ]
+        },
+        {
+            "place": "Farnham",
+            "at": [
+                -0.8,
+                51.21
+            ],
+            "items": [
+                "MA in Illustration, University for the Creative Arts (Chevening Scholarship)"
+            ]
+        },
+        {
+            "place": "Guildford",
+            "at": [
+                -0.57,
+                51.24
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Woking",
+            "at": [
+                -0.56,
+                51.32
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Brookwood",
+            "at": [
+                -0.63,
+                51.3
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Churt",
+            "at": [
+                -0.76,
+                51.14
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Compton",
+            "at": [
+                -0.63,
+                51.21
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Englefield Green",
+            "at": [
+                -0.57,
+                51.43
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Hemel Hempstead",
+            "at": [
+                -0.47,
+                51.75
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Cambridge",
+            "at": [
+                0.12,
+                52.2
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Brockenhurst",
+            "at": [
+                -1.57,
+                50.82
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Bournemouth",
+            "at": [
+                -1.88,
+                50.72
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Windermere & Bowness",
+            "at": [
+                -2.92,
+                54.36
+            ],
+            "items": [
+                "Lakes International Comic Art Festival (2023–2025)"
+            ]
+        },
+        {
+            "place": "Ecclerigg",
+            "at": [
+                -2.93,
+                54.39
+            ],
+            "items": [
+                "Lakes International Comic Art Festival (2023–2025)"
+            ]
+        },
+        {
+            "place": "Ambleside",
+            "at": [
+                -2.96,
+                54.43
+            ],
+            "items": [
+                "Lakes International Comic Art Festival (2023–2025)"
+            ]
+        },
+        {
+            "place": "Rydal",
+            "at": [
+                -2.98,
+                54.45
+            ],
+            "items": [
+                "Lakes International Comic Art Festival (2023–2025)"
+            ]
+        },
+        {
+            "place": "Grasmere",
+            "at": [
+                -3.02,
+                54.46
+            ],
+            "items": [
+                "Lakes International Comic Art Festival (2023–2025)"
+            ]
+        },
+        {
+            "place": "Edinburgh",
+            "at": [
+                -3.19,
+                55.95
+            ],
+            "items": [
+                "2018 · Edinburgh International Book Festival"
+            ]
+        },
+        {
+            "place": "Exeter",
+            "at": [
+                -3.53,
+                50.72
+            ],
+            "items": [
+                "Lecture, University of Exeter",
+                "2023 · Transnational Solidarity Conference"
             ]
         }
     ],
     "France": [
         {
-            "place": "France",
+            "place": "Paris",
             "at": [
                 2.35,
                 48.85
             ],
             "items": [
-                "2017 · First prize, l’Estaque press cartoon festival, Marseille",
-                "2018 · La Palestine en dessins, Paris",
-                "Je ne partirai pas & 30 secondes à Gaza (Alifbata)",
+                "2018 · La Palestine en dessins",
+                "Je ne partirai pas & 30 secondes à Gaza (Alifbata)"
+            ]
+        },
+        {
+            "place": "Angoulême",
+            "at": [
+                0.16,
+                45.65
+            ],
+            "items": [
                 "2025 · Exhibition at the Angoulême comics festival"
+            ]
+        },
+        {
+            "place": "L’Isle-d’Espagnac",
+            "at": [
+                0.19,
+                45.66
+            ],
+            "items": [
+                "2025 · Angoulême comics festival"
+            ]
+        },
+        {
+            "place": "Cognac",
+            "at": [
+                -0.33,
+                45.69
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Marseille",
+            "at": [
+                5.37,
+                43.3
+            ],
+            "items": [
+                "2017 · First prize, l’Estaque press cartoon festival"
+            ]
+        },
+        {
+            "place": "Montmélian",
+            "at": [
+                6.05,
+                45.5
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Montailleur",
+            "at": [
+                6.29,
+                45.62
+            ],
+            "items": [
+                "Exhibition"
             ]
         }
     ],
     "Spain": [
         {
-            "place": "Spain",
+            "place": "Madrid",
             "at": [
                 -3.7,
-                40.4
+                40.42
             ],
             "items": [
-                "2024 · 30 segundos en Gaza (Al Fanar), Casa Árabe, Madrid",
-                "2025 · Palestinian Comics Exhibition tour, curator",
-                "2026 · Valencia comics fair & Bilbao exhibition"
+                "2024 · 30 segundos en Gaza (Al Fanar), Casa Árabe"
+            ]
+        },
+        {
+            "place": "Barcelona",
+            "at": [
+                2.17,
+                41.39
+            ],
+            "items": [
+                "2025 · Palestinian Comics Exhibition tour"
+            ]
+        },
+        {
+            "place": "Murcia",
+            "at": [
+                -1.13,
+                37.99
+            ],
+            "items": [
+                "2025 · Palestinian Comics Exhibition tour"
+            ]
+        },
+        {
+            "place": "Alicante",
+            "at": [
+                -0.48,
+                38.35
+            ],
+            "items": [
+                "2025 · Palestinian Comics Exhibition tour"
+            ]
+        },
+        {
+            "place": "Valencia",
+            "at": [
+                -0.38,
+                39.47
+            ],
+            "items": [
+                "2026 · Valencia comics fair"
+            ]
+        },
+        {
+            "place": "Bilbao",
+            "at": [
+                -2.93,
+                43.26
+            ],
+            "items": [
+                "2026 · Palestinian comics exhibition"
             ]
         }
     ],
     "Italy": [
         {
-            "place": "Italy",
+            "place": "Rome",
             "at": [
                 12.5,
                 41.9
             ],
             "items": [
-                "2023 · Racconto Palestina (Mesogea) and a 10-city tour",
-                "2024 · 30 Seconds from Gaza (Mesogea)",
-                "2024 · Collective comics exhibition, Naples"
+                "2023 · Racconto Palestina (Mesogea), 10-city tour"
+            ]
+        },
+        {
+            "place": "Naples",
+            "at": [
+                14.27,
+                40.85
+            ],
+            "items": [
+                "2024 · Collective comics exhibition"
+            ]
+        },
+        {
+            "place": "Padua",
+            "at": [
+                11.88,
+                45.41
+            ],
+            "items": [
+                "2024 · 30 Seconds from Gaza book tour"
+            ]
+        },
+        {
+            "place": "Venice",
+            "at": [
+                12.33,
+                45.44
+            ],
+            "items": [
+                "2024 · 30 Seconds from Gaza book tour"
+            ]
+        },
+        {
+            "place": "Trieste",
+            "at": [
+                13.78,
+                45.65
+            ],
+            "items": [
+                "2024 · 30 Seconds from Gaza book tour"
+            ]
+        },
+        {
+            "place": "Sondrio",
+            "at": [
+                9.87,
+                46.17
+            ],
+            "items": [
+                "2024 · 30 Seconds from Gaza book tour"
+            ]
+        },
+        {
+            "place": "Tirano",
+            "at": [
+                10.17,
+                46.22
+            ],
+            "items": [
+                "2024 · 30 Seconds from Gaza book tour"
             ]
         }
     ],
@@ -199,18 +540,78 @@
             "place": "The Hague",
             "at": [
                 4.3,
-                52.1
+                52.08
             ],
             "items": [
                 "2019 · Exhibition at the International Criminal Court"
+            ]
+        },
+        {
+            "place": "Nijmegen",
+            "at": [
+                5.86,
+                51.84
+            ],
+            "items": [
+                "Exhibition"
             ]
         }
     ],
     "Belgium": [
         {
+            "place": "Brussels",
+            "at": [
+                4.35,
+                50.85
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Saint-Josse-ten-Noode",
+            "at": [
+                4.37,
+                50.85
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Auderghem",
+            "at": [
+                4.43,
+                50.82
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Wezembeek-Oppem",
+            "at": [
+                4.49,
+                50.84
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Kampenhout",
+            "at": [
+                4.55,
+                50.94
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
             "place": "Bastogne",
             "at": [
-                5.7,
+                5.72,
                 50.0
             ],
             "items": [
@@ -232,14 +633,24 @@
     ],
     "Germany": [
         {
-            "place": "Germany",
+            "place": "Berlin",
             "at": [
                 13.4,
-                52.5
+                52.52
             ],
             "items": [
                 "Exhibition, Berlin",
                 "Published in German"
+            ]
+        },
+        {
+            "place": "Kleve",
+            "at": [
+                6.14,
+                51.79
+            ],
+            "items": [
+                "Exhibition"
             ]
         }
     ],
@@ -278,14 +689,34 @@
                 "2026 · Palestinian Comics Exhibition, Academy of Fine Arts",
                 "Published in Slovenian"
             ]
+        },
+        {
+            "place": "Maribor",
+            "at": [
+                15.65,
+                46.55
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Jareninski Vrh",
+            "at": [
+                15.68,
+                46.63
+            ],
+            "items": [
+                "Exhibition"
+            ]
         }
     ],
     "Kosovo": [
         {
-            "place": "Kosovo",
+            "place": "Pristina",
             "at": [
-                21.2,
-                42.7
+                21.17,
+                42.66
             ],
             "items": [
                 "2024 · Comics festival"
@@ -344,11 +775,21 @@
         {
             "place": "Amman",
             "at": [
-                35.9,
+                35.93,
                 31.95
             ],
             "items": [
                 "2007–2008 · Solo exhibition “Halet Shaghab”"
+            ]
+        },
+        {
+            "place": "South Shuna",
+            "at": [
+                35.6,
+                31.9
+            ],
+            "items": [
+                "Exhibition"
             ]
         }
     ],
@@ -410,20 +851,90 @@
             "items": [
                 "Power Born of Dreams published by Dar Al-Mahrousa"
             ]
+        },
+        {
+            "place": "Sharm El-Sheikh",
+            "at": [
+                34.33,
+                27.92
+            ],
+            "items": [
+                "Exhibition"
+            ]
         }
     ],
     "Palestine": [
         {
-            "place": "Palestine",
+            "place": "Jenin",
+            "at": [
+                35.3,
+                32.46
+            ],
+            "items": [
+                "Hometown",
+                "Arab American University"
+            ]
+        },
+        {
+            "place": "Nablus",
+            "at": [
+                35.26,
+                32.22
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Ramallah",
             "at": [
                 35.2,
                 31.9
             ],
             "items": [
                 "Lives and works in Ramallah",
-                "Curated exhibitions: Mahmoud Darwish Museum (2014), From the World to Jerusalem (2018), Shireen Abu Akleh tribute (2022)",
                 "2023 · First collective exhibition of Palestinian comics",
-                "Murals: Jerusalem, Yasser Arafat, Home"
+                "Curated: Mahmoud Darwish Museum (2014), From the World to Jerusalem (2018), Shireen Abu Akleh tribute (2022)"
+            ]
+        },
+        {
+            "place": "Khirbat al-Tira",
+            "at": [
+                35.17,
+                31.88
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Jericho",
+            "at": [
+                35.45,
+                31.86
+            ],
+            "items": [
+                "Exhibition"
+            ]
+        },
+        {
+            "place": "Jerusalem",
+            "at": [
+                35.23,
+                31.78
+            ],
+            "items": [
+                "Mural: Jerusalem"
+            ]
+        },
+        {
+            "place": "Yafa",
+            "at": [
+                34.75,
+                32.05
+            ],
+            "items": [
+                "Exhibition"
             ]
         }
     ]
