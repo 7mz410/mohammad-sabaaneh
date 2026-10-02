@@ -86,7 +86,7 @@ function cardsSection(title, items = []) {
         return `
                 <a href="${r.url.replace(/&/g, '&amp;')}" target="_blank" rel="noopener" class="review animate-up">
                     <img src="${img}" alt="${r.source} article" loading="lazy">
-                    <blockquote class="praise"${r.lang ? ` lang="${r.lang}" dir="rtl"` : ''}>“${r.quote}”<cite>${cite}</cite></blockquote>
+                    <blockquote class="praise"${r.lang ? ` lang="${r.lang}"${r.lang === 'ar' ? ' dir="rtl"' : ''}` : ''}>“${r.quote}”<cite>${cite}</cite></blockquote>
                 </a>`;
     }).join('');
     return `<section class="section pb-0"><div class="container"><h2 class="section-title sub">${title}</h2><div class="reviews">${cards}</div></div></section>`;

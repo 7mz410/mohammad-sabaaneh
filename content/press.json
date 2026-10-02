@@ -107,6 +107,65 @@
             "quote": "The intention was not to represent the prophet. [It was to] symbolise Islam and its role of disseminating light and love on the human race."
         }
     ],
+    "Festivals": [
+        {
+            "source": "Toronto Comic Arts Festival",
+            "author": "Canada",
+            "year": "2026",
+            "url": "https://www.torontocomics.com/post/mohammad-saba-aneh-street-noise-tcaf-2026-interview",
+            "image": "iv-tcaf.webp",
+            "quote": "Palestinian political cartoonist, visual artist, and TCAF 2026 Featured Guest Mohammad Saba'aneh."
+        },
+        {
+            "source": "Brooklyn Book Festival",
+            "author": "USA",
+            "year": "2026",
+            "url": "https://brooklynbookfestival.org/event/witness-international-comics-documenting-war-and-genocide/",
+            "image": "fe-bbfauth.webp",
+            "quote": "In Welcome To Hell: From the West Bank to Gaza, editorial cartoonist Mohammad Sabaaneh illustrates his brother’s incarceration and torture in an Israeli prison, and the news from friends in Gaza during the 2023 Israeli bombardment."
+        },
+        {
+            "source": "Lakes International Comic Art Festival",
+            "author": "UK",
+            "year": "2025",
+            "url": "https://downthetubes.net/lakes-international-comic-art-festival-to-publish-safaa-and-the-tent/",
+            "image": "fe-licaf.webp",
+            "quote": "Safaa and the Tent is a voluntary collaboration between the Lakes International Comic Art Festival and celebrated Palestinian cartoonist Mohammad Sabaaneh."
+        },
+        {
+            "source": "Lakes International Comic Art Festival",
+            "author": "UK",
+            "year": "2024",
+            "url": "https://downthetubes.net/mohammad-sabaaneh-wins-swedens-ewk-award-of-2024/",
+            "image": "nw-ewk.webp",
+            "quote": "Sweden’s EWK Award of 2024 has been awarded to the Palestinian political cartoonist Mohammad Sabaaneh, who will be a guest of the Lakes International Comic Art Festival in September."
+        },
+        {
+            "source": "Edinburgh International Book Festival",
+            "author": "UK",
+            "year": "2018",
+            "url": "https://theweereview.com/review/martin-rowson-mohammad-sabaaneh-with-phill-jupitus/",
+            "image": "fe-edin.webp",
+            "quote": "Both books by Martin Rowson and Mohammad Sabaaneh show the importance of graphic novels and how illustrations can convey distinctive and evocative images."
+        },
+        {
+            "source": "Festival International du Dessin de Presse de l’Estaque",
+            "author": "France",
+            "year": "2017",
+            "url": "https://www.assopalestine13.org/Les-dessins-de-Mohammad-Sabaaneh-a-la-8e-edition-du-festival-international-du",
+            "image": "fe-estaque.webp",
+            "lang": "fr",
+            "quote": "Le dessinateur Mohammad Sabaaneh invité d’honneur du Festival International du Dessin de Presse, de la Caricature et de la Satire de l’Estaque (Marseille)."
+        },
+        {
+            "source": "New York Comics & Picture-story Symposium",
+            "author": "USA",
+            "year": "2017",
+            "url": "https://nycomicssymposium.wordpress.com/2017/04/19/mohammad-sabaaneh-april-26-2017-at-7pm/",
+            "image": "fe-nycs.webp",
+            "quote": "Mohammad will discuss his craft, including his production methods and artistic choices, and his artistic influences and how he navigates the challenges of editorial cartooning in Palestine."
+        }
+    ],
     "Interviews": [
         {
             "source": "Comicon",
