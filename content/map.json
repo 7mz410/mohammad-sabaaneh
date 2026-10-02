@@ -177,16 +177,6 @@
             ]
         },
         {
-            "place": "Brookwood",
-            "at": [
-                -0.63,
-                51.3
-            ],
-            "items": [
-                "Exhibition"
-            ]
-        },
-        {
             "place": "Churt",
             "at": [
                 -0.76,
@@ -241,16 +231,6 @@
             "at": [
                 -1.57,
                 50.82
-            ],
-            "items": [
-                "Exhibition"
-            ]
-        },
-        {
-            "place": "Bournemouth",
-            "at": [
-                -1.88,
-                50.72
             ],
             "items": [
                 "Exhibition"
@@ -850,16 +830,6 @@
             ],
             "items": [
                 "Power Born of Dreams published by Dar Al-Mahrousa"
-            ]
-        },
-        {
-            "place": "Sharm El-Sheikh",
-            "at": [
-                34.33,
-                27.92
-            ],
-            "items": [
-                "Exhibition"
             ]
         }
     ],
