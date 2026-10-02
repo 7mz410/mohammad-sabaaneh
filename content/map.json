@@ -134,6 +134,58 @@
             ]
         }
     ],
+    "Ireland": [
+        {
+            "place": "Dublin",
+            "at": [
+                -6.26,
+                53.35
+            ],
+            "items": [
+                "2019 · Palestine in Black and White tour (IPSC): NCAD, Trinity College, Pearse Centre"
+            ]
+        },
+        {
+            "place": "Waterford",
+            "at": [
+                -7.11,
+                52.26
+            ],
+            "items": [
+                "2019 · Talk & exhibition, The Tower Hotel"
+            ]
+        },
+        {
+            "place": "Limerick",
+            "at": [
+                -8.63,
+                52.66
+            ],
+            "items": [
+                "2019 · Talk & exhibition"
+            ]
+        },
+        {
+            "place": "Galway",
+            "at": [
+                -9.05,
+                53.27
+            ],
+            "items": [
+                "2019 · Talk & exhibition, Black Gate Cultural Centre"
+            ]
+        },
+        {
+            "place": "Maynooth & Celbridge",
+            "at": [
+                -6.59,
+                53.38
+            ],
+            "items": [
+                "2019 · Maynooth University & Celbridge"
+            ]
+        }
+    ],
     "United Kingdom": [
         {
             "place": "London",
