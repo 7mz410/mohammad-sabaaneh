@@ -38,7 +38,8 @@ Sabaaneh web/              ← المصادر الأصلية (خارج git، ~2G
 |---|---|
 | `index.html` | يدوي. الـ NAV والـ FOOTER بين تعليقات `<!-- NAV -->` و`<!-- FOOTER -->` يستبدلها السكربت |
 | `cartoons.html` | مولّد من `public/assets/Cartoon/<سنة>` — تبويب لكل سنة، `#2019` في الرابط يفتح السنة |
-| `murals.html` | مولّد من `public/assets/Mural/<اسم>` — الترتيب في `ORDER` داخل `generateMurals` |
+| `murals.html` | مولّد من `public/assets/Mural/<اسم>` (ما عدا Ink) — الترتيب في `ORDER` داخل `generateMurals` |
+| `ink-murals.html` | مولّد من `public/assets/Mural/Ink` — `generateInkMurals` |
 | `books.html` + `book-<slug>.html` | مولّد. بيانات الكتب في ثابت `BOOKS` + `content/` |
 | `prints.html` | مولّد من `public/assets/prints/<مجموعة>` — Digital دائماً آخراً، زر تحميل `Sabaaneh_High.pdf` |
 | `news.html` | مولّد من `content/press.json` |

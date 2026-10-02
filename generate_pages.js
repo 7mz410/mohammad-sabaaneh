@@ -10,6 +10,7 @@ const LINKS = [
     ['index.html#about', 'Bio'],
     ['cartoons.html', 'Cartoons'],
     ['murals.html', 'Murals'],
+    ['ink-murals.html', 'Ink Murals'],
     ['books.html', 'Books'],
     ['prints.html', 'Prints'],
     ['news.html', 'News'],
@@ -191,8 +192,8 @@ async function generateCartoons() {
 async function generateMurals() {
     const basePath = path.join(__dirname, 'public', 'assets', 'Mural');
     // Newest first; folders not listed here go at the end
-    const ORDER = ['Jerusalem', 'Home', 'Yasser Arafat', 'Vanella', 'Ink'];
-    const dirs = (await getSubdirs(basePath)).sort((a, b) =>
+    const ORDER = ['Jerusalem', 'Home', 'Yasser Arafat', 'Vanella'];
+    const dirs = (await getSubdirs(basePath)).filter(d => d !== 'Ink').sort((a, b) =>
         (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
     let sections = '';
     for (const dir of dirs) {
@@ -209,6 +210,17 @@ async function generateMurals() {
     const html = HEAD('Murals') + NAV + `<main class="page" id="main">${pageHeader('Public walls', 'Murals')}${sections}</main>` + FOOTER + CLOSE;
     await fs.writeFile(path.join(__dirname, 'murals.html'), html);
     console.log('Generated murals.html');
+}
+
+// ======================= INK MURALS =======================
+// Long ink murals on paper, split out from the Murals page
+async function generateInkMurals() {
+    const dir = path.join(__dirname, 'public', 'assets', 'Mural', 'Ink');
+    const files = await getWebpFiles(dir);
+    const imgs = files.map(f => `<img src="./public/assets/Mural/Ink/${f}" alt="Ink mural" class="animate-up wide" loading="lazy">`).join('\n                ');
+    const html = HEAD('Ink Murals') + NAV + `<main class="page" id="main">${pageHeader('Murals on paper', 'Ink Murals')}${gallerySection('Ink', imgs)}</main>` + FOOTER + CLOSE;
+    await fs.writeFile(path.join(__dirname, 'ink-murals.html'), html);
+    console.log('Generated ink-murals.html');
 }
 
 // ======================= BOOKS =======================
@@ -419,6 +431,7 @@ async function main() {
     await generate404();
     await generateCartoons();
     await generateMurals();
+    await generateInkMurals();
     await generateBooks();
     await generatePrints();
     await generateNews();
