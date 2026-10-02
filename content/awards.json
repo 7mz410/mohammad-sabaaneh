@@ -1,0 +1,32 @@
+{
+    "Welcome to hell": [
+        {
+            "source": "The Comics Beat",
+            "author": "",
+            "year": "2026",
+            "url": "https://www.comicsbeat.com/new-york-library-best-comics-2026/",
+            "image": "./public/assets/Books/Welcome to hell/Welcome to Hell front cover.webp",
+            "quote": "The New York Public Library chooses the best new comics of 2026."
+        }
+    ],
+    "30 second from Gaza": [
+        {
+            "source": "Broken Frontier",
+            "author": "",
+            "year": "2025",
+            "url": "https://www.brokenfrontier.com/broken-frontier-awards-2025-announcing-the-winners/",
+            "image": "aw-bf25.webp",
+            "quote": "Best Graphic Non-Fiction: 30 Seconds from Gaza: Diary of Genocide (Mohammad Sabaaneh, Olive Branch Press)"
+        }
+    ],
+    "Power Born of Dream": [
+        {
+            "source": "Palestine Book Awards",
+            "author": "",
+            "year": "2022",
+            "url": "https://www.palestinebookawards.com/news/item/winners-of-palestine-book-awards-2022-announced",
+            "image": "aw-pba.webp",
+            "quote": "The Translation Award was given to Dalia and Mouin Rabbani for their work on MEMO cartoonist Mohammad Sabaaneh's book Power Born of Dreams, a unique artistic creation showcasing scenes that Palestinians under occupation are subjected to on a regular basis."
+        }
+    ]
+}

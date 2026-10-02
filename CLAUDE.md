@@ -26,7 +26,9 @@ Sabaaneh web/              ← المصادر الأصلية (خارج git، ~2G
     ├── content/
     │   ├── books/<slug>.html  نص كل كتاب (HTML جزئي)
     │   ├── buy-links.json     روابط الشراء لكل طبعة
-    │   └── reviews.json       ريفيوهات الكتب: اقتباس + رابط + لقطة شاشة في public/assets/Reviews/
+    │   ├── reviews.json       ريفيوهات الكتب: اقتباس + رابط + لقطة شاشة في public/assets/Reviews/
+    │   ├── awards.json        جوائز كل كتاب (نفس الصيغة)
+    │   └── press.json         صفحة news.html: أقسام News وInterviews (نفس الصيغة، `lang: "ar"` للنص العربي)
     └── public/assets/      الصور المضغوطة (webp) بنفس هيكل المصادر
 ```
 
@@ -39,6 +41,7 @@ Sabaaneh web/              ← المصادر الأصلية (خارج git، ~2G
 | `murals.html` | مولّد من `public/assets/Mural/<اسم>` — الترتيب في `ORDER` داخل `generateMurals` |
 | `books.html` + `book-<slug>.html` | مولّد. بيانات الكتب في ثابت `BOOKS` + `content/` |
 | `prints.html` | مولّد من `public/assets/prints/<مجموعة>` — Digital دائماً آخراً، زر تحميل `Sabaaneh_High.pdf` |
+| `news.html` | مولّد من `content/press.json` |
 | `404.html` | مولّد |
 
 **لا تعدّل الصفحات المولّدة يدوياً** — التعديل يضيع عند التشغيل التالي. عدّل `generate_pages.js` أو `content/`.
@@ -61,7 +64,7 @@ npx serve .          # معاينة محلية (أو أي static server)
   - سنة جديدة للكاريكاتير: أضفها لمصفوفة `years` في `compress_missing.js`، وحدّث `2017 – 2024` في `generateCartoons`.
 - **كتاب جديد:** أضف مدخلاً في `BOOKS` (اسم المجلد ← [العنوان، العنوان الفرعي، ملف الغلاف الإنجليزي])، وفي مصفوفة `books` بـ `compress_missing.js`، ونص في `content/books/<slug>.html`، وروابط في `buy-links.json`.
   - الـ slug يُشتق من اسم المجلد: `Power Born of Dream` ← `power-born-of-dream`.
-- **ريفيو جديد لكتاب:** أضف مدخلاً في `content/reviews.json` تحت اسم مجلد الكتاب، وضع لقطة الشاشة (webp، عرض 800) في `public/assets/Reviews/` ← `npm run pages`.
+- **ريفيو/جائزة/خبر/مقابلة جديدة:** أضف مدخلاً في `content/reviews.json` أو `awards.json` أو `press.json` تحت اسم مجلد الكتاب، وضع لقطة الشاشة (webp، عرض 800) في `public/assets/Reviews/` ← `npm run pages`.
 - **فيديو:** مضمّن كـ YouTube iframe. الرئيسية في `index.html`، جدارية Home وكتاب Power Born داخل `generate_pages.js`.
 - **روابط التواصل/الإيميل:** ثابت `SOCIAL` و`NAV`/`FOOTER` في `generate_pages.js` ثم `npm run pages` (يحدّث `index.html` أيضاً).
 - **جدارية عريضة (panorama):** نسبة > 2.5 تأخذ class `wide` تلقائياً وتمتد بعرض الشبكة.

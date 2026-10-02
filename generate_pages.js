@@ -12,6 +12,7 @@ const LINKS = [
     ['murals.html', 'Murals'],
     ['books.html', 'Books'],
     ['prints.html', 'Prints'],
+    ['news.html', 'News'],
     ['#contact', 'Contact'],
 ];
 
@@ -69,7 +70,25 @@ const BOOKS = {
 };
 
 const BUY_LINKS = JSON.parse(await fs.readFile(path.join(__dirname, 'content', 'buy-links.json'), 'utf8'));
-const REVIEWS = JSON.parse(await fs.readFile(path.join(__dirname, 'content', 'reviews.json'), 'utf8'));
+const readJson = async (name) => JSON.parse(await fs.readFile(path.join(__dirname, 'content', name), 'utf8'));
+const REVIEWS = await readJson('reviews.json');
+const AWARDS = await readJson('awards.json');
+const PRESS = await readJson('press.json');
+
+// Linked screenshot + quote cards (reviews, awards, news, interviews)
+function cardsSection(title, items = []) {
+    if (!items.length) return '';
+    const cards = items.map(r => {
+        const img = r.image.startsWith('./') ? r.image : `./public/assets/Reviews/${r.image}`;
+        const cite = [r.author, r.source, r.year].filter(Boolean).join(', ');
+        return `
+                <a href="${r.url.replace(/&/g, '&amp;')}" target="_blank" rel="noopener" class="review animate-up">
+                    <img src="${img}" alt="${r.source} article" loading="lazy">
+                    <blockquote class="praise"${r.lang ? ` lang="${r.lang}" dir="rtl"` : ''}>“${r.quote}”<cite>${cite}</cite></blockquote>
+                </a>`;
+    }).join('');
+    return `<section class="section pb-0"><div class="container"><h2 class="section-title sub">${title}</h2><div class="reviews">${cards}</div></div></section>`;
+}
 
 const HEAD = (title) => `<!DOCTYPE html>
 <html lang="en">
@@ -274,14 +293,7 @@ async function generateBooks() {
             </div>
         </section>` : '';
 
-        const reviews = (REVIEWS[book] || []).map(r => `
-                <a href="${r.url.replace(/&/g, '&amp;')}" target="_blank" rel="noopener" class="review animate-up">
-                    <img src="./public/assets/Reviews/${r.image}" alt="${r.source} article" loading="lazy">
-                    <blockquote class="praise">“${r.quote}”<cite>${r.author ? `${r.author}, ` : ''}${r.source}</cite></blockquote>
-                </a>`).join('');
-        const press = reviews ? `<section class="section pb-0"><div class="container"><h2 class="section-title sub">Press &amp; Reviews</h2><div class="reviews">${reviews}</div></div></section>` : '';
-
-        let sections = buy + text + press + gallerySection('Covers', coverImgs);
+        let sections = buy + text + cardsSection('Awards &amp; Honors', AWARDS[book]) + cardsSection('Press &amp; Reviews', REVIEWS[book]) + gallerySection('Covers', coverImgs);
         if (videoHtml) sections += `<section class="section bg-dark"><div class="container"><h2 class="section-title sub text-center">Video</h2>${videoHtml}</div></section>`;
         if (pagesImgs) sections += gallerySection('Pages', pagesImgs);
 
@@ -334,6 +346,14 @@ async function generatePrints() {
     console.log('Generated prints.html');
 }
 
+// ======================= NEWS =======================
+async function generateNews() {
+    const sections = Object.entries(PRESS).map(([title, items]) => cardsSection(title, items)).join('');
+    const html = HEAD('News') + NAV + `<main class="page" id="main">${pageHeader('In the press', 'News &amp; Interviews')}${sections}</main>` + FOOTER + CLOSE;
+    await fs.writeFile(path.join(__dirname, 'news.html'), html);
+    console.log('Generated news.html');
+}
+
 // ======================= MAIN =======================
 // Inject shared nav/footer into the hand-written index.html
 async function syncIndex() {
@@ -370,6 +390,7 @@ async function main() {
     await generateMurals();
     await generateBooks();
     await generatePrints();
+    await generateNews();
 }
 
 main();
