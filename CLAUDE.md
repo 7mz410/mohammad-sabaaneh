@@ -25,7 +25,8 @@ Sabaaneh web/              ← المصادر الأصلية (خارج git، ~2G
     ├── style.css
     ├── content/
     │   ├── books/<slug>.html  نص كل كتاب (HTML جزئي)
-    │   └── buy-links.json     روابط الشراء لكل طبعة
+    │   ├── buy-links.json     روابط الشراء لكل طبعة
+    │   └── reviews.json       ريفيوهات الكتب: اقتباس + رابط + لقطة شاشة في public/assets/Reviews/
     └── public/assets/      الصور المضغوطة (webp) بنفس هيكل المصادر
 ```
 
@@ -60,6 +61,7 @@ npx serve .          # معاينة محلية (أو أي static server)
   - سنة جديدة للكاريكاتير: أضفها لمصفوفة `years` في `compress_missing.js`، وحدّث `2017 – 2024` في `generateCartoons`.
 - **كتاب جديد:** أضف مدخلاً في `BOOKS` (اسم المجلد ← [العنوان، العنوان الفرعي، ملف الغلاف الإنجليزي])، وفي مصفوفة `books` بـ `compress_missing.js`، ونص في `content/books/<slug>.html`، وروابط في `buy-links.json`.
   - الـ slug يُشتق من اسم المجلد: `Power Born of Dream` ← `power-born-of-dream`.
+- **ريفيو جديد لكتاب:** أضف مدخلاً في `content/reviews.json` تحت اسم مجلد الكتاب، وضع لقطة الشاشة (webp، عرض 800) في `public/assets/Reviews/` ← `npm run pages`.
 - **فيديو:** مضمّن كـ YouTube iframe. الرئيسية في `index.html`، جدارية Home وكتاب Power Born داخل `generate_pages.js`.
 - **روابط التواصل/الإيميل:** ثابت `SOCIAL` و`NAV`/`FOOTER` في `generate_pages.js` ثم `npm run pages` (يحدّث `index.html` أيضاً).
 - **جدارية عريضة (panorama):** نسبة > 2.5 تأخذ class `wide` تلقائياً وتمتد بعرض الشبكة.

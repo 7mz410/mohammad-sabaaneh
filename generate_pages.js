@@ -69,6 +69,7 @@ const BOOKS = {
 };
 
 const BUY_LINKS = JSON.parse(await fs.readFile(path.join(__dirname, 'content', 'buy-links.json'), 'utf8'));
+const REVIEWS = JSON.parse(await fs.readFile(path.join(__dirname, 'content', 'reviews.json'), 'utf8'));
 
 const HEAD = (title) => `<!DOCTYPE html>
 <html lang="en">
@@ -273,7 +274,14 @@ async function generateBooks() {
             </div>
         </section>` : '';
 
-        let sections = buy + text + gallerySection('Covers', coverImgs);
+        const reviews = (REVIEWS[book] || []).map(r => `
+                <a href="${r.url.replace(/&/g, '&amp;')}" target="_blank" rel="noopener" class="review animate-up">
+                    <img src="./public/assets/Reviews/${r.image}" alt="${r.source} article" loading="lazy">
+                    <blockquote class="praise">“${r.quote}”<cite>${r.author ? `${r.author}, ` : ''}${r.source}</cite></blockquote>
+                </a>`).join('');
+        const press = reviews ? `<section class="section pb-0"><div class="container"><h2 class="section-title sub">Press &amp; Reviews</h2><div class="reviews">${reviews}</div></div></section>` : '';
+
+        let sections = buy + text + press + gallerySection('Covers', coverImgs);
         if (videoHtml) sections += `<section class="section bg-dark"><div class="container"><h2 class="section-title sub text-center">Video</h2>${videoHtml}</div></section>`;
         if (pagesImgs) sections += gallerySection('Pages', pagesImgs);
 

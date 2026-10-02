@@ -774,6 +774,33 @@ body.menu-open .navbar {
 
 .book-text details[open] > summary::after { content: '−'; }
 
+/* Press & reviews */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+    gap: 2rem;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    color: inherit;
+}
+
+.review img {
+    width: 100%;
+    aspect-ratio: 1280 / 900;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid var(--line);
+    transition: border-color 0.2s ease;
+}
+
+.review .praise { margin: 0; font-size: 1.05rem; }
+
+.review:hover img { border-color: var(--red); }
+
 /* Buy links */
 .buy {
     max-width: 720px;
