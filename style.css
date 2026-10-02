@@ -633,6 +633,154 @@ body.menu-open .navbar {
     color: var(--muted);
 }
 
+/* Featured news carousel */
+.featured-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.featured-media {
+    margin-top: 2.5rem;
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--ink-2);
+    box-shadow: 1rem 1rem 0 -1px var(--ink), 1rem 1rem 0 0 var(--red);
+}
+
+
+.featured-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.06);
+    filter: grayscale(100%);
+    transition: opacity 0.9s var(--ease), transform 6s linear, filter 0.9s ease;
+}
+
+.featured-img.active {
+    opacity: 1;
+    transform: scale(1);
+    filter: grayscale(0%);
+}
+
+.featured-body { min-height: 26rem; display: flex; flex-direction: column; }
+
+.featured-slide.active { animation: featuredIn 0.7s var(--ease) both; }
+
+@keyframes featuredIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+}
+
+.featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem 0 1rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.featured-meta span {
+    padding: 0.15rem 0.5rem;
+    background: var(--red);
+    color: var(--paper);
+    letter-spacing: 0.1em;
+}
+
+.featured-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--paper);
+}
+
+.featured-text {
+    margin: 1.25rem 0 1.5rem;
+    font-size: 1.1rem;
+}
+
+.featured-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--paper);
+}
+
+.featured-link i { color: var(--red-text); transition: transform 0.3s var(--ease); }
+.featured-link:hover i { transform: translateX(6px); }
+
+.featured-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+.featured-tab {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    min-height: 44px;
+    padding: 0.9rem 0 0;
+    background: none;
+    border: 0;
+    border-top: 2px solid var(--line);
+    cursor: pointer;
+    font-family: var(--font-display);
+    color: var(--muted);
+    text-align: left;
+}
+
+.featured-num { font-size: 0.75rem; letter-spacing: 0.15em; }
+.featured-tab-year { font-size: 1.1rem; letter-spacing: 0.05em; }
+
+.featured-tab[aria-selected="true"],
+.featured-tab:hover { color: var(--paper); }
+
+.featured-bar {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--red);
+}
+
+.featured-tab[aria-selected="true"] .featured-bar { animation: featuredBar var(--featured-delay, 7s) linear forwards; }
+.featured.paused .featured-bar { animation-play-state: paused; }
+
+@keyframes featuredBar { to { width: 100%; } }
+
+.facts small {
+    display: block;
+    max-width: 18rem;
+    margin: 0.6rem auto 0;
+    font-size: 0.85rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
 /* About */
 .about-grid {
     display: grid;
@@ -1188,6 +1336,8 @@ body.menu-open .navbar {
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .featured-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .featured-body { min-height: 0; }
     .category-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid { gap: 3rem; }
 }
@@ -1225,6 +1375,7 @@ body.menu-open .navbar {
 
 @media (prefers-reduced-motion: reduce) {
     .ticker-track { animation: none; }
+    .featured-tab[aria-selected="true"] .featured-bar { animation: none; width: 100%; }
     .ticker { overflow-x: auto; }
     html { scroll-behavior: auto; }
     *, *::before, *::after {

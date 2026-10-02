@@ -103,3 +103,27 @@ if (allImages.length) {
         if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
     });
 }
+
+// Featured news carousel: auto-advances, pauses on hover/focus
+const featured = document.querySelector('.featured');
+if (featured) {
+    const tabs = [...featured.querySelectorAll('.featured-tab')];
+    const slides = featured.querySelectorAll('.featured-slide');
+    const imgs = featured.querySelectorAll('.featured-img');
+    const delay = 7000;
+    let current = 0, timer;
+    const show = (i) => {
+        current = (i + tabs.length) % tabs.length;
+        tabs.forEach((t, n) => t.setAttribute('aria-selected', n === current));
+        slides.forEach((s, n) => { s.hidden = n !== current; s.classList.toggle('active', n === current); });
+        imgs.forEach((img, n) => img.classList.toggle('active', n === current));
+    };
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const play = () => { clearInterval(timer); if (!reduced) timer = setInterval(() => show(current + 1), delay); };
+    tabs.forEach((t, i) => t.addEventListener('click', () => { show(i); play(); }));
+    featured.addEventListener('mouseenter', () => { clearInterval(timer); featured.classList.add('paused'); });
+    featured.addEventListener('mouseleave', () => { featured.classList.remove('paused'); play(); });
+    featured.addEventListener('focusin', () => { clearInterval(timer); featured.classList.add('paused'); });
+    featured.addEventListener('focusout', () => { featured.classList.remove('paused'); play(); });
+    play();
+}

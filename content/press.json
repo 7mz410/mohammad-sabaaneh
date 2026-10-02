@@ -44,6 +44,14 @@
         {
             "source": "Middle East Monitor",
             "author": "",
+            "year": "2019",
+            "url": "https://www.middleeastmonitor.com/20191212-palestine-artwork-stolen-and-hidden-at-the-icc/",
+            "image": "./public/assets/Featured/icc-hague-2019.webp",
+            "quote": "Palestine artwork stolen and hidden at the ICC."
+        },
+        {
+            "source": "Middle East Monitor",
+            "author": "",
             "year": "2018",
             "url": "https://www.middleeastmonitor.com/20180607-palestinian-memo-cartoonist-detained-by-israel-forces/",
             "image": "nw-memodet.webp",
