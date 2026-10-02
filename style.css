@@ -2,6 +2,7 @@
     --ink: #0d0d0d;
     --ink-2: #151515;
     --ink-3: #1f1f1f;
+    --charcoal: #262626;
     --line: #2c2c2c;
     --paper: #f2eee6;
     --text: #cfcac1;
@@ -548,7 +549,7 @@ body.menu-open .navbar {
 @keyframes ticker { to { transform: translateX(-50%); } }
 
 /* Exhibitions timeline */
-.exhibitions { overflow: hidden; }
+.exhibitions { overflow: hidden; background: var(--charcoal); }
 
 .timeline-wrap {
     -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent);
@@ -574,7 +575,7 @@ body.menu-open .navbar {
     scroll-snap-align: start;
     position: relative;
     padding: 2.25rem 2rem 0 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #3a3a3a;
 }
 
 .timeline-item::before {
@@ -585,7 +586,7 @@ body.menu-open .navbar {
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: var(--ink-2);
+    background: var(--charcoal);
     border: 2px solid var(--red);
     transition: background 0.2s ease;
 }
