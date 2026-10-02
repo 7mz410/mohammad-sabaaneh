@@ -2,6 +2,8 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
+import { geoNaturalEarth1, geoPath, geoGraticule10 } from 'd3-geo';
+import { feature } from 'topojson-client';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -397,6 +399,54 @@ async function generateNews() {
     console.log('Generated news.html');
 }
 
+// ======================= WORLD MAP (home) =======================
+// Built once at generation time: plain inline SVG, no map library in the browser.
+async function buildWorldMap() {
+    const MAP = await readJson('map.json');
+    const world = JSON.parse(await fs.readFile(path.join(__dirname, 'node_modules', 'world-atlas', 'countries-110m.json'), 'utf8'));
+    const countries = feature(world, world.objects.countries).features.filter(f => f.properties.name !== 'Antarctica');
+    const W = 1000, H = 520;
+    const projection = geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: 'FeatureCollection', features: countries });
+    const toPath = geoPath(projection).digits(1);
+    const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+    const label = (n) => n === 'United States of America' ? 'United States' : n;
+
+    const shapes = countries.map(f => {
+        const name = f.properties.name;
+        return MAP[name] ? '' : `<path d="${toPath(f)}"/>`;
+    }).join('');
+    const byName = Object.fromEntries(countries.map(f => [f.properties.name, f]));
+    // Pins sit on the city where the activity happened; listed order = draw order
+    const active = Object.entries(MAP).map(([name, { at, items }]) => {
+        const [x, y] = projection(at).map(v => v.toFixed(1));
+        return `<g class="map-country${name === 'Palestine' ? ' is-home' : ''}" tabindex="0" role="button" data-name="${esc(label(name))}" data-items="${esc(JSON.stringify(items))}" aria-label="${esc(label(name))}: ${esc(items.join('; '))}">
+                <path d="${toPath(byName[name])}"/>
+                <circle class="map-pulse" cx="${x}" cy="${y}" r="4"/>
+                <circle class="map-pin" cx="${x}" cy="${y}" r="3"/>
+            </g>`;
+    }).join('');
+    const names = Object.keys(MAP).reverse();
+    const chips = names.map(n => `<button class="map-chip" data-name="${esc(label(n))}">${esc(label(n))}</button>`).join('');
+
+    return `
+        <section class="section worldmap-section" id="world" aria-labelledby="world-title">
+            <div class="container">
+                <p class="eyebrow">Around the world</p>
+                <h2 class="section-title sub" id="world-title">Exhibitions, Books &amp; Activities</h2>
+                <p class="worldmap-count"><strong>${names.length}</strong> countries · hover or tap a country</p>
+                <div class="worldmap">
+                    <svg viewBox="0 0 ${W} ${H}" role="group" aria-label="World map of exhibitions, books and activities">
+                        <path class="map-graticule" d="${toPath(geoGraticule10())}"/>
+                        <g class="map-land">${shapes}</g>
+                        <g class="map-active">${active}</g>
+                    </svg>
+                    <div class="map-tip" role="status" aria-live="polite" hidden></div>
+                </div>
+                <div class="map-chips">${chips}</div>
+            </div>
+        </section>`;
+}
+
 // ======================= MAIN =======================
 // Inject shared nav/footer into the hand-written index.html
 async function syncIndex() {
@@ -404,7 +454,8 @@ async function syncIndex() {
     let html = await fs.readFile(file, 'utf8');
     html = html
         .replace(/<!-- NAV -->[\s\S]*<!-- \/NAV -->/, `<!-- NAV -->${NAV}\n<!-- /NAV -->`)
-        .replace(/<!-- FOOTER -->[\s\S]*<!-- \/FOOTER -->/, `<!-- FOOTER -->${FOOTER}\n<!-- /FOOTER -->`);
+        .replace(/<!-- FOOTER -->[\s\S]*<!-- \/FOOTER -->/, `<!-- FOOTER -->${FOOTER}\n<!-- /FOOTER -->`)
+        .replace(/<!-- MAP -->[\s\S]*<!-- \/MAP -->/, `<!-- MAP -->${await buildWorldMap()}\n<!-- /MAP -->`);
     await fs.writeFile(file, html);
     console.log('Synced index.html');
 }

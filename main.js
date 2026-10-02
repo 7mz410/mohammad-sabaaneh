@@ -135,3 +135,68 @@ document.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') document.querySelectorAll('details.enquire[open]').forEach(d => { d.open = false; });
 });
+
+// World map: tooltip with a country's activities on hover, focus or tap
+const worldmap = document.querySelector('.worldmap');
+if (worldmap) {
+    const tip = worldmap.querySelector('.map-tip');
+    const countries = [...worldmap.querySelectorAll('.map-country')];
+    const chips = [...document.querySelectorAll('.map-chip')];
+    let current = null;
+    const small = matchMedia('(max-width: 700px)');
+    // On phones, crop the map to the area around the pins so they stay tappable
+    const svg = worldmap.querySelector('svg');
+    const fullBox = svg.getAttribute('viewBox');
+    const fit = () => {
+        if (!small.matches) return svg.setAttribute('viewBox', fullBox);
+        const pins = [...svg.querySelectorAll('.map-pin')].map(c => [+c.getAttribute('cx'), +c.getAttribute('cy')]);
+        const xs = pins.map(p => p[0]), ys = pins.map(p => p[1]), pad = 30;
+        const x = Math.min(...xs) - pad, y = Math.min(...ys) - pad;
+        svg.setAttribute('viewBox', `${x} ${y} ${Math.max(...xs) - x + pad} ${Math.max(...ys) - y + pad}`);
+    };
+    fit();
+    small.addEventListener('change', fit);
+    const show = (g) => {
+        if (current === g) return;
+        current = g;
+        countries.forEach(c => c.classList.toggle('is-active', c === g));
+        chips.forEach(c => c.classList.toggle('is-active', c.dataset.name === g.dataset.name));
+        const items = JSON.parse(g.dataset.items);
+        tip.innerHTML = `<h3></h3><ul>${items.map(() => '<li></li>').join('')}</ul>`;
+        tip.querySelector('h3').textContent = g.dataset.name;
+        tip.querySelectorAll('li').forEach((li, i) => { li.textContent = items[i]; });
+        tip.hidden = false;
+        if (small.matches) return; // phones: tooltip sits under the map (CSS)
+        // Anchor above the pin, kept inside the map horizontally
+        const pin = g.querySelector('.map-pin').getBoundingClientRect();
+        const box = worldmap.getBoundingClientRect();
+        tip.hidden = false;
+        const half = tip.offsetWidth / 2;
+        const x = Math.min(Math.max(pin.left + pin.width / 2 - box.left, half), box.width - half);
+        let y = pin.top - box.top;
+        tip.style.transform = y - tip.offsetHeight - 14 < -box.top ? 'translate(-50%, 18px)' : '';
+        tip.style.left = `${x}px`;
+        tip.style.top = `${y}px`;
+    };
+    const hide = () => {
+        current = null;
+        tip.hidden = true;
+        countries.forEach(c => c.classList.remove('is-active'));
+        chips.forEach(c => c.classList.remove('is-active'));
+    };
+    countries.forEach(g => {
+        g.addEventListener('mouseenter', () => show(g));
+        g.addEventListener('focus', () => show(g));
+        g.addEventListener('click', (e) => { e.stopPropagation(); show(g); });
+        g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(g); } });
+    });
+    chips.forEach(chip => {
+        const g = countries.find(c => c.dataset.name === chip.dataset.name);
+        chip.addEventListener('mouseenter', () => show(g));
+        chip.addEventListener('click', (e) => { e.stopPropagation(); show(g); });
+    });
+    worldmap.querySelector('svg').addEventListener('mouseleave', hide);
+    document.querySelector('.map-chips').addEventListener('mouseleave', hide);
+    document.addEventListener('click', hide);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
+}

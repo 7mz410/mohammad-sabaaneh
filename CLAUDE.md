@@ -28,6 +28,7 @@ Sabaaneh web/              ← المصادر الأصلية (خارج git، ~2G
     │   ├── buy-links.json     روابط الشراء لكل طبعة
     │   ├── reviews.json       ريفيوهات الكتب: اقتباس + رابط + لقطة شاشة في public/assets/Reviews/
     │   ├── awards.json        جوائز كل كتاب (نفس الصيغة)
+    │   ├── map.json           خريطة العالم بالرئيسية: الدولة ← [خط الطول، العرض] + الأنشطة
     │   └── press.json         صفحة news.html: أقسام News وInterviews (نفس الصيغة، `lang: "ar"` للنص العربي)
     └── public/assets/      الصور المضغوطة (webp) بنفس هيكل المصادر
 ```
@@ -66,6 +67,7 @@ npx serve .          # معاينة محلية (أو أي static server)
 - **كتاب جديد:** أضف مدخلاً في `BOOKS` (اسم المجلد ← [العنوان، العنوان الفرعي، ملف الغلاف الإنجليزي])، وفي مصفوفة `books` بـ `compress_missing.js`، ونص في `content/books/<slug>.html`، وروابط في `buy-links.json`.
   - الـ slug يُشتق من اسم المجلد: `Power Born of Dream` ← `power-born-of-dream`.
 - **ريفيو/جائزة/خبر/مقابلة جديدة:** أضف مدخلاً في `content/reviews.json` أو `awards.json` أو `press.json` تحت اسم مجلد الكتاب، وضع لقطة الشاشة (webp، عرض 800) في `public/assets/Reviews/` ← `npm run pages`.
+- **خريطة العالم (آخر قسم بالرئيسية):** عدّل `content/map.json` ← `npm run pages`. الـ SVG يُبنى وقت التوليد (d3-geo + world-atlas، devDependencies) ويُحقن بين `<!-- MAP -->` و`<!-- /MAP -->`. اسم الدولة لازم يطابق `world-atlas` (مثلاً `United States of America`).
 - **فيديو:** مضمّن كـ YouTube iframe. الرئيسية في `index.html`، جدارية Home وكتاب Power Born داخل `generate_pages.js`.
 - **روابط التواصل/الإيميل:** ثابت `SOCIAL` و`NAV`/`FOOTER` في `generate_pages.js` ثم `npm run pages` (يحدّث `index.html` أيضاً).
 - **جدارية عريضة (panorama):** نسبة > 2.5 تأخذ class `wide` تلقائياً وتمتد بعرض الشبكة.
