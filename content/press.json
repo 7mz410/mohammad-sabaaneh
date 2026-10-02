@@ -1,6 +1,14 @@
 {
     "News": [
         {
+            "source": "The Comics Beat",
+            "author": "Ricardo Serrano Denis",
+            "year": "2026",
+            "url": "https://www.comicsbeat.com/new-york-library-best-comics-2026/",
+            "image": "./public/assets/Books/Welcome to hell/Welcome to Hell cover 4P.webp",
+            "quote": "The New York Public Library chooses the best new comics of 2026."
+        },
+        {
             "source": "Al-Araby Al-Jadeed",
             "author": "",
             "year": "2024",
