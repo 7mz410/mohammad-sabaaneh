@@ -127,3 +127,11 @@ if (featured) {
     featured.addEventListener('focusout', () => { featured.classList.remove('paused'); play(); });
     play();
 }
+
+// Close enquire menus on outside click or Escape
+document.addEventListener('click', (e) => {
+    document.querySelectorAll('details.enquire[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; });
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') document.querySelectorAll('details.enquire[open]').forEach(d => { d.open = false; });
+});
